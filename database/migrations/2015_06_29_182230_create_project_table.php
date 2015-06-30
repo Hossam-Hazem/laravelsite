@@ -17,7 +17,6 @@ class CreateProjectTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->boolean('isSchool');
-            $table->integer('hardness');
             $table->string('date');
             $table->string('course');
             $table->integer('related');
