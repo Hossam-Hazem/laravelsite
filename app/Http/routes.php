@@ -14,5 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/createproject','ProjectController@create');
+Route::get('/createproject',['middleware'=>'manager','uses'=>'ProjectController@create']);
 Route::post('/create','ProjectController@store');
+
+Route::controllers([
+    'auth'=>'Auth\AuthController'
+]);
