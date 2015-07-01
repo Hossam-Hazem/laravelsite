@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
 
@@ -38,9 +39,14 @@ class ProjectController extends Controller
     public function store()
     {
         $input = Request::all();
-        \App\Project::create($input);
+        $project=\App\Project::create($input);
+        for($c=0;$c<count($_FILES);$c++){
+            $destinationPath='uploads/'.$project->name;
+            $image= Input::file('photo'.$c);
+            $filename=$image->getClientOriginalName();
+            $image->move($destinationPath,$filename);
+        }
         return redirect('createproject');
-
     }
 
     /**
