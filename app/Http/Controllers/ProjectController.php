@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests;
+use App\Project;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Filesystem\Filesystem;
 
 class ProjectController extends Controller
 {
@@ -40,7 +43,7 @@ class ProjectController extends Controller
     public function store()
     {
         $input = Request::all();
-        $project=\App\Project::create($input);
+        $project= Project::create($input);
         for($c=0;$c<count($_FILES);$c++){
             $destinationPath='uploads/'.$project->name;
             $image= Input::file('photo'.$c);
@@ -53,12 +56,20 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $name
      * @return Response
      */
-    public function show($id)
+    public function show($name)
     {
-        //
+         $project = Project::where('name',$name)->get()->first();
+         $x = new Filesystem();
+        $filesDest = File::allfiles($_SERVER['DOCUMENT_ROOT'].'/uploads/222');
+        $files=array();
+        for($c = 0;$c<count($filesDest);$c++){
+            $files[$c]=File::name($filesDest[$c]).'.'. File::extension($filesDest[$c]);
+        }
+        //dd($filenames);
+        return view('project.show',compact('project','files'));
     }
 
     /**
