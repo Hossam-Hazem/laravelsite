@@ -63,10 +63,10 @@ class ProjectController extends Controller
     {
          $project = Project::where('name',$name)->get()->first();
          $x = new Filesystem();
-        $filesDest = File::allfiles($_SERVER['DOCUMENT_ROOT'].'/uploads/222');
+        $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'].'/uploads/222');
         $files=array();
-        for($c = 0;$c<count($filesDest);$c++){
-            $files[$c]=File::name($filesDest[$c]).'.'. File::extension($filesDest[$c]);
+        for($c = 0;$c<count($filesDestination);$c++){
+            $files[$c]=File::name($filesDestination[$c]).'.'. File::extension($filesDestination[$c]);
         }
         //dd($filenames);
         return view('project.show',compact('project','files'));
