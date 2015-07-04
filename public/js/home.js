@@ -1,10 +1,16 @@
 $(document).ready(function(){
     console.log('document width = '+$(document).width()+' height = '+$(window).height())
+
     var width = $(document).width();
     $('.WelcomeHead').width(width);
     $('.WelcomeHead').height($(window).height());
-    console.log('width = '+$('.WelcomeHead').width()+' height = '+$('.WelcomeHead').height())
     scrollingDiv();
+    var c=0;
+    var l=$('.scrolling').children().length;
+   var scrollinginterval=setInterval(function(){
+        scrollIt('down',c,l)
+        c=(c+1)%l
+    },3000)
 
 
 
@@ -18,8 +24,27 @@ $(document).ready(function(){
     $(window).resize(function() {
         $('.WelcomeHead').width($(window).width());
         $('.WelcomeHead').height($(window).height());
-
     });
+    $('.glyphicon-circle-arrow-down').click(function(){
+        scrollIt('down',c,l);
+        c=(c+1)%l;
+        clearInterval(scrollinginterval);
+        scrollinginterval= setInterval(function(){
+            scrollIt('down',c,l)
+            c=(c+1)%l
+        },3000)
+    })
+    $('.glyphicon-circle-arrow-up').click(function(){
+        scrollIt('up',c,l);
+        c=c-1;
+        if(c==-1)
+            c=l-1
+        clearInterval(scrollinginterval);
+        scrollinginterval= setInterval(function(){
+            scrollIt('down',c,l)
+            c=(c+1)%l
+        },3000)
+    })
 })
 
 
@@ -29,33 +54,57 @@ function scrollingDiv(){
     $('.scrolling>#e1').addClass('MedOpacity');
     $('.scrolling>#e3').addClass('MedOpacity');
     $('.scrolling>#e4').addClass('LowOpacity');
-    setTimeout(function(){scrollIt(0,$('.scrolling').children().length)},3000);
+    $('.scrolling').css('min-height',$('.scrolling').css('height'))
 }
-function scrollIt(c,l){
-    var $tmpout=$('.scrolling>#e'+c);
-    cn=(c+1)%l;
-    var $tmpin = $('.scrolling>#e'+((cn+4)%l))
-    console.log($tmpin)
-    $tmpout.slideUp('slow',function(){
-        $tmpout.addClass('hidden')
-        console.log('c = ' + c+' cn = '+cn )
-        $('.scrolling>#e'+c).removeClass('LowOpacity');
-        $('.scrolling>#e'+(c+4)).removeClass('LowOpacity');
-        $('.scrolling>#e'+(c+1)).removeClass('MedOpacity');
-        $('.scrolling>#e'+(c+3)).removeClass('MedOpacity');
-        $tmpout.remove();
-        $('.scrolling').append($tmpout);
+function scrollIt(type,c,l){
+    if(type=='down') {
+        var $tmpout = $('.scrolling>#e' + c);
+        cn = (c + 1) % l;
+        var $tmpin = $('.scrolling>#e' + ((cn + 4) % l))
+        console.log($tmpin)
+        $tmpout.slideUp('slow', function () {
+            $tmpout.addClass('hidden')
+            console.log('c = ' + c + ' cn = ' + cn)
+            $('.scrolling>#e' + c).removeClass('LowOpacity');
+            $('.scrolling>#e' + (c + 4)% l).removeClass('LowOpacity');
+            $('.scrolling>#e' + (c + 1)% l).removeClass('MedOpacity');
+            $('.scrolling>#e' + (c + 3)% l).removeClass('MedOpacity');
+            $tmpout.remove();
+            $('.scrolling').append($tmpout);
 
-        $('.scrolling>#e'+cn).addClass('LowOpacity');
-        $('.scrolling>#e'+((cn+4)%l)).addClass('LowOpacity');
-        $('.scrolling>#e'+((cn+1)%l)).addClass('MedOpacity');
-        $('.scrolling>#e'+((cn+3)%l)).addClass('MedOpacity');
-        $tmpin.removeClass('hidden');
-        $tmpin.fadeIn('slow',function(){
-            setTimeout(function () {
-                scrollIt(cn, l);
-            }, 10000);
+            $('.scrolling>#e' + cn).addClass('LowOpacity');
+            $('.scrolling>#e' + ((cn + 4) % l)).addClass('LowOpacity');
+            $('.scrolling>#e' + ((cn + 1) % l)).addClass('MedOpacity');
+            $('.scrolling>#e' + ((cn + 3) % l)).addClass('MedOpacity');
+            $tmpin.removeClass('hidden');
+            $tmpin.fadeIn('slow');
+
+        });
+    }
+    else{
+       cn=c-1;
+       if(cn==-1) {
+           cn = l - 1;
+       }
+        var $tmpin= $('.scrolling>#e' + cn);
+        var $tmpout=$('.scrolling>#e' + (c+4)%l);
+        console.log($tmpin)
+        console.log($tmpout)
+        $tmpout.fadeOut('slow',function(){
+            $tmpout.addClass('hidden')
+            $('.scrolling>#e' + c).removeClass('LowOpacity');
+            $('.scrolling>#e' + (c+1)%l).removeClass('MedOpacity');
+            $('.scrolling>#e' + (c+3)%l).removeClass('MedOpacity');
+            $('.scrolling>#e' + (c+4)%l).removeClass('LowOpacity');
+
+            $tmpin.remove();
+            $('.scrolling').prepend($tmpin);
+            $('.scrolling>#e' + cn).addClass('LowOpacity');
+            $('.scrolling>#e' + c).addClass('MedOpacity');
+            $('.scrolling>#e' + (c+2)%l).addClass('MedOpacity');
+            $('.scrolling>#e' + (c+3)%l).addClass('LowOpacity');
+            $tmpin.removeClass('hidden');
+            $tmpin.fadeIn('slow');
         })
-
-    });
+    }
 }

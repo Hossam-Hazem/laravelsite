@@ -41,9 +41,12 @@ body{
     padding-top: 7% ;
 }
 .infoDiv{
-    margin-top:4%;
+    text-align: center;
+    margin-top:1%;
+}
+.scrolling{
     overflow:hidden;
-    height:30%;
+
 }
 .centertext{
     text-align:center
@@ -52,10 +55,17 @@ body{
     font-size:17px;
     color:white;
 }
+.WelcomeText:hover{
+    opacity:1;
+}
 .LowOpacity{
     opacity: 0.4;
 }
 .MedOpacity{
     opacity:0.8;
 
+}
+
+.glyphicon:hover{
+    color:white;
 }

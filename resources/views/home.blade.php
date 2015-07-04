@@ -13,16 +13,21 @@
 <div class = "WelcomeHead">
         <div class="WelcomeTag">Welcome</div>
         <div class="WelcomeImagediv"><img src="{{asset('images/myimage.jpg')}}" class="WelcomeImage"/></div>
-        <div class="infoDiv scrolling"><div class="centertext WelcomeText"id="e0">0</div>
-                              <div class="centertext WelcomeText"id="e1">1</div>
-                              <div class="centertext WelcomeText"id="e2">2</div>
-                              <div class="centertext WelcomeText"id="e3">3</div>
-                              <div class="centertext WelcomeText"id="e4">4</div>
-            <div class="centertext WelcomeText"id="e5">5</div>
-            <div class="centertext WelcomeText"id="e6">6</div>
-            <div class="centertext WelcomeText"id="e7">7</div>
-
+        <div class="infoDiv">
+            <h1 class="glyphicon glyphicon-circle-arrow-up"></h1>
+            <div class="scrolling">
+                <div class="centertext WelcomeText"id="e0">0</div>
+                <div class="centertext WelcomeText"id="e1">1</div>
+                <div class="centertext WelcomeText"id="e2">2</div>
+                <div class="centertext WelcomeText"id="e3">3</div>
+                <div class="centertext WelcomeText"id="e4">4</div>
+                <div class="centertext WelcomeText"id="e5">5</div>
+                <div class="centertext WelcomeText"id="e6">6</div>
+                <div class="centertext WelcomeText"id="e7">7</div>
+            </div>
+            <h1 class="glyphicon glyphicon-circle-arrow-down"></h1>
         </div>
+
         <div class="ArrowDownDiv"><img src="{{asset('images/Arrow-Down.png')}}" class="ArrowDown"/></div>
 
 </div>
