@@ -23,6 +23,68 @@ $(document).ready(function () {
 
     $('.HomeBody').addClass('hidden');
 
+    ///////////////////////////////////////////
+    //Skills adjusting star rating
+    var emptystar="<span class='star emptystar glyphicon glyphicon-star-empty '></span>"
+    var filledstar="<span class='star filledstar glyphicon glyphicon-star '></span>"
+    var rateitstar="<span class='star emptystar rateitstar glyphicon glyphicon-star-empty '></span>"
+
+     $('.Stars').val(function (index, value) {
+         value=parseInt($(this).text());
+         $(this).text('');
+         if(value==-1){
+             $(this).append(rateitstar);
+             $(this).append(rateitstar);
+             $(this).append(rateitstar);
+             $(this).append(rateitstar);
+             $(this).append(rateitstar);
+         }
+         else {
+             if (value == 5) {
+                 $(this).append(filledstar);
+                 $(this).append(filledstar);
+                 $(this).append(filledstar);
+                 $(this).append(filledstar);
+                 $(this).append(filledstar);
+             }
+             else {
+                 if (value == 4) {
+                     $(this).append(filledstar);
+                     $(this).append(filledstar);
+                     $(this).append(filledstar);
+                     $(this).append(filledstar);
+                 }
+                 else {
+                     if (value == 3) {
+                         $(this).append(filledstar);
+                         $(this).append(filledstar);
+                         $(this).append(filledstar);
+                     }
+                     else {
+                         if (value == 2) {
+                             $(this).append(filledstar);
+                             $(this).append(filledstar);
+                         }
+                         else {
+                             $(this).append(filledstar);
+                             $(this).append(emptystar);
+                         }
+                         $(this).append(emptystar);
+                     }
+                     $(this).append(emptystar);
+                 }
+                 $(this).append(emptystar);
+             }
+         }
+     });
+
+
+
+
+
+
+
+
 
     $(window).resize(function () {
         $('.WelcomeHead').width($(window).width());

@@ -6,7 +6,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret One">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet"
+          href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
     <link rel="stylesheet" href="{{asset('css/home.css')}}"/>
 </head>
 <body>
@@ -53,18 +55,43 @@
             <div class="HBNavMenu">
                 <div class="HBNavItem"><a class="HBNavItemLink" href="">Skills</a></div>
                 <div class="HBNavItem"><a class="HBNavItemLink" href="">My Projects</a></div>
-                <div class="HBNavItem" ><a class="HBNavItemLink" href="">School Projects</a></div>
-                <div class="HBNavItem" ><a class="HBNavItemLink" href="">Contact me</a></div>
+                <div class="HBNavItem"><a class="HBNavItemLink" href="">School Projects</a></div>
+                <div class="HBNavItem"><a class="HBNavItemLink" href="">Contact me</a></div>
             </div>
         </nav>
     </header>
     <div class="HomeContent">
         <section class="Skills">
-            <header class="SkillsHeader">Skills & Experience</header>
+            <div class="SkillsHeader"><span class="SkillsHeaderSpan">Skills & Experience</span></div>
+            <div class="SkillsBody">
+                <div class="WebDevelopment">
+                    <div class="WebDevelopmentHeader">
+                        <span class="WebDevelopmentHeaderSpan">Web Development And Databases</span>
+                    </div>
+                    <div class="WebDevelopmentBody">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                @foreach($skills as $skill)
+                                    <tr>
+                                        @if($skill->isIcon)
+                                             <td ><i class="icon {{$skill->path}}"></i></td>
+                                        @else
+                                            <td ><img src="{{asset('images/'.$skill->path)}}" class="iconimage"/></td>
+                                        @endif
+                                        <td><span class="Stars">{{$skill->rating}}</span></td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </section>
 
-        <section class="MyProjects"></section>
+        <section class="MyProjects">
+
+        </section>
 
         <section class="SchoolProjects"></section>
 
@@ -75,7 +102,7 @@
 
 </div>
 <script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
-<script src="{{ asset('js/home.js') }}"></script>
+<script src="{{ asset('home.js') }}"></script>
 <script src="{{ asset('js/modernizr.custom.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>

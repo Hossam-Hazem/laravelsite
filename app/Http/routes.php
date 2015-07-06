@@ -16,6 +16,10 @@ Route::get('/createproject',['middleware'=>'manager','uses'=>'ProjectController@
 Route::post('/create','ProjectController@store');
 
 
+Route::get('/newskill','HomeController@createSkill');
+Route::post('/createskill','HomeController@storeSkill');
+
+
 Route::controllers([
     'auth'=>'Auth\AuthController'
 ]);

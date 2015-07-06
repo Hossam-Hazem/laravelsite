@@ -14,7 +14,7 @@
         <div style="text-align: center;"><h1>create a new project</h1>  </div>
         {!! Form::open(['url'=>'create','files'=>true])!!}
             <div class="form-group">
-                {!!Form::label('title','Name:')!!}
+                {!!Form::label('name','Name:')!!}
                 {!!Form::text('name',null,['class'=>'form-control'])!!}
             </div>
             <div class="form-group">
