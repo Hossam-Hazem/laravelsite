@@ -20,6 +20,8 @@ class CreateSkillTable extends Migration
             $table->boolean('isIcon');
             $table->string('path');
             $table->timestamps();
+            $table->integer('skillType_id');
+            $table->foreign('skillType_id')->references('id')->on('skillTypes');
         });
     }
 

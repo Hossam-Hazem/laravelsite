@@ -9,12 +9,13 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
-    <link rel="stylesheet" href="{{asset('css/home.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/home1.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/slider.css')}}"/>
 </head>
 <body>
 <div class="WelcomeDiv"></div>
 
-<div class="WelcomeHead">
+<div class="WelcomeHead page">
     <div class="WelcomeLayer">
         <div class="WelcomeHeadHeader">
             <div class="WelcomeTag">Welcome</div>
@@ -43,8 +44,9 @@
         </footer>
     </div>
 </div>
-<div class="HomeBody">
-    <header>
+<div class="HomeBody page">
+
+    <header class="Header">
         <nav class="HBNav">
             <div class="HBNavX">
                 <img class='HBNavXImage' src="{{asset('images/myimage.jpg')}}"/></img>
@@ -60,50 +62,76 @@
             </div>
         </nav>
     </header>
-    <div class="HomeContent">
-        <section class="Skills">
+
+    <section class="Skills page">
+
+        <div class="SkillsHeaderDiv">
             <div class="SkillsHeader"><span class="SkillsHeaderSpan">Skills & Experience</span></div>
-            <div class="SkillsBody">
-                <div class="WebDevelopment">
-                    <div class="WebDevelopmentHeader">
-                        <span class="WebDevelopmentHeaderSpan">Web Development And Databases</span>
-                    </div>
-                    <div class="WebDevelopmentBody">
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                @foreach($skills as $skill)
-                                    <tr>
-                                        @if($skill->isIcon)
-                                             <td ><i class="icon {{$skill->path}}"></i></td>
-                                        @else
-                                            <td ><img src="{{asset('images/'.$skill->path)}}" class="iconimage"/></td>
-                                        @endif
-                                        <td><span class="Stars">{{$skill->rating}}</span></td>
-                                    </tr>
-                                @endforeach
-                            </table>
-                        </div>
+        </div>
+        <div class="SkillsBody">
+            <div class="WebDevelopment">
+                <div class="WebDevelopmentHeader">
+                    <span class="WebDevelopmentHeaderSpan">Web Development And Databases</span>
+                </div>
+                <div class="WebDevelopmentBody">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-condensed">
+                            <th>Skill</th>
+                            <th>Proficiency</th>
+                            @foreach($skills as $skill)
+                                <tr>
+                                    @if($skill->isIcon)
+                                        <td><i class="icon {{$skill->path}}"></i></td>
+                                    @else
+                                        <td><img src="{{asset('images/'.$skill->path)}}" class="iconimage"/></td>
+                                    @endif
+                                    <td>
+                                        <div class="Stars vert-align">{{$skill->rating}}</div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
                     </div>
                 </div>
             </div>
+        </div>
 
-        </section>
+    </section>
 
-        <section class="MyProjects">
+    <section class="Projects page">
+        <div class="SkillsHeaderDiv">
+            <div class="SkillsHeader"><span class="SkillsHeaderSpan">Projects</span></div>
+            <div class="WebDevelopmentHeader">
+                <span class="WebDevelopmentHeaderSpan">My Projects</span>
+            </div>
+        </div>
+        <div class="ProjectsBody">
+            <div class='main'>
 
-        </section>
+                @for($c=0;$c<count($myprojects);$c++)
+                    <div class='slide ' id='p{{$c}}'>{{$myprojects[$c]->name}}</div>
+                @endfor
+                <div class='sliderIcons'>
+                    <ul class="sliderIconsL">
+                    </ul>
+                </div>
+                <div class="ButtonDiv">
+                    <button class="btn btn-default nextbt">Show next Project</button>
+                    <button class="btn btn-default prevbt">Show previous Project</button>
+                </div>
+            </div>
 
-        <section class="SchoolProjects"></section>
-
-        <section class="ContactMe"></section>
-    </div>
+        </div>
+    </section>
+    <section class="ContactMe"></section>
     <footer></footer>
 
 
 </div>
-<script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
-<script src="{{ asset('home.js') }}"></script>
 <script src="{{ asset('js/modernizr.custom.js') }}"></script>
+<script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
+<script src="{{ asset('js/slider.js') }}"></script>
+<script src="{{ asset('js/home.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    //vars
+    var currentpage='.WelcomeHead';
+
     //some modernizer thing
     var animEndEventNames = {
             'WebkitAnimation' : 'webkitAnimationEnd',
@@ -8,9 +11,13 @@ $(document).ready(function () {
         },
         animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ]
     ///////////
-    var width = $(document).width();
-    $('.WelcomeHead').width(width);
-    $('.WelcomeHead').height($(window).height());
+    setTimeout(function(){
+        $('.WelcomeHead').width($(window).width());
+        $('.WelcomeHead').height($(window).height());
+    },50)
+  //  $('.WelcomeHead').width($(window).width());
+    $('.Skills').css('top',$('.Header').height());
+    $('.Projects').css('top',$('.Header').height())
     $('.infoDiv').height($(window).height() - $('.WelcomeHeadHeader').height() - 80);
     scrollingDiv();
     var c = 0;
@@ -20,8 +27,9 @@ $(document).ready(function () {
         c = (c + 1) % l
     }, 3000)
     ///////////////////////
-
     $('.HomeBody').addClass('hidden');
+    $('.Projects').addClass('hidden');
+    $('.ContactMe').addClass('hidden');
 
     ///////////////////////////////////////////
     //Skills adjusting star rating
@@ -87,10 +95,10 @@ $(document).ready(function () {
 
 
     $(window).resize(function () {
-        $('.WelcomeHead').width($(window).width());
+        setTimeout(function(){$('.WelcomeHead').width($(window).width());},50)
         $('.WelcomeHead').height($(window).height());
         $('.infoDiv').height($(window).height() - $('.WelcomeHeadHeader').height() - 80);
-        console.log($('.infoDiv').height())
+
     });
     $('.glyphicon-circle-arrow-down').click(function () {
         scrollIt('down', c, l);
@@ -113,17 +121,41 @@ $(document).ready(function () {
         }, 3000)
     })
     $('.BodyArrowouterDiv').click(function () {
-        $('body').addClass('bodyAnimate');
-        $('.WelcomeHead').addClass('AnimateUpOut');
-        $('.HomeBody').removeClass('hidden');
-        $('.HomeBody').addClass('AnimateUpIn');
-        $('body').on(animEndEventName,function(){
-            $('.WelcomeHead').removeClass('AnimateUpOut');
-            $('.HomeBody').removeClass('AnimateUpIn');
-            $('.WelcomeHead').addClass('hidden');
-            $('body').removeClass('bodyAnimate');
-        })
+        GetDown('.WelcomeHead','.HomeBody');
     })
+    $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            setTimeout(function(){
+                if(currentpage=='.WelcomeHead') {
+                    console.log('ha3')
+                    GetDown('.WelcomeHead', '.HomeBody');
+                }
+                if(currentpage=='.HomeBody'){
+                    GetDown( '.Skills','.Projects');
+                }
+
+            },3000)
+
+        }
+    });
+
+
+
+    function GetDown(current,next){
+        $(next).css('height','100%');
+        $(next).removeClass('hidden');
+        $('body').addClass('bodyAnimate');
+        $(current).addClass('AnimateUpOut');
+        $(next).addClass('AnimateUpIn');
+        $('body').on(animEndEventName,function(){
+            $(current).removeClass('AnimateUpOut');
+            $(next).removeClass('AnimateUpIn');
+            $(current).addClass('hidden');
+            $('body').removeClass('bodyAnimate');
+            $(next).css('height','auto');
+            currentpage=next;
+        })
+    }
 })
 
 
@@ -183,3 +215,4 @@ function scrollIt(type, c, l) {
         })
     }
 }
+

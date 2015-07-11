@@ -22,4 +22,8 @@ class Skill extends Model
         }
         $this->attributes['isIcon']=$input;
     }
+    public function skillType()
+    {
+        return $this->belongsTo('App\SkillType');
+    }
 }

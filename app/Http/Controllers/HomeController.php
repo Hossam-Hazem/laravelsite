@@ -17,10 +17,10 @@ class HomeController extends Controller
     public function index()
     {
         $schoolprojects = Project::SchoolProject()->latest();
-        $myprojects = Project::MyProject()->latest();
+        $myprojects = Project::MyProject()->latest()->get();
         $skills=Skill::all();
 
-        return view('home',compact('skills'));
+        return view('home',compact('skills','schoolprojects','myprojects'));
     }
     public function createSkill(){
         return view('home.createSkill');
