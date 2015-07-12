@@ -275,19 +275,37 @@ table tr td{
     margin-bottom: 5%;
 }
 
-
-
+.myProjectsSlider{
+    border-style: groove;
+}
+.projectHead{
+    color:orange;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
 .photosSlider{
-    width: 50%;
+    width: 75%;
     margin:0 auto;
     height:300px;
 
 }
-
 .photoSliderButton{
     top:0;
     padding: 150px 20px;
     font-size: 30px;
+    background-color: rgba(0,0,0,0.3);
+}
+.photoSliderButton:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+.projectDescription{
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+    border: medium;
+    border-radius: 10%;
+    border-color:orange ;
 }
 
 

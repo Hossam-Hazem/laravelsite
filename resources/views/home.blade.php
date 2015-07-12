@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
-    <link rel="stylesheet" href="{{asset('css/slider1.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/slider.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/home.css')}}"/>
 
 </head>
@@ -113,6 +113,7 @@
                     <div class='slide ' id='p{{$c}}'>{{$myprojects[$c]->name}}</div>
                 @endfor
                 <div class='slide ' id='p3'>
+                    <div class="projectHead">haaaaa33</div>
                     <div class='photosSlider sliderMain'>
                         <div class='slide ' id='p0'>1</div>
                         <div class='slide' id='p1'>2</div>
@@ -128,16 +129,19 @@
                             <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
                         </div>
                     </div>
+                    <div class="projectDescription"><p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad
+                            autem consectetur ea esse et id magni, odio placeat quae quaerat soluta suscipit ut. Maxime
+                            molestias mollitia sapiente velit veritatis?</p></div>
 
                 </div>
-                    <div class='sliderIcons'>
-                        <ul class="sliderIconsL">
-                        </ul>
-                    </div>
-                    <div class="ButtonDiv">
-                        <button class="btn btn-default nextbt">Show next Project</button>
-                        <button class="btn btn-default prevbt">Show previous Project</button>
-                    </div>
+                <div class='sliderIcons'>
+                    <ul class="sliderIconsL">
+                    </ul>
+                </div>
+                <div class="ButtonDiv">
+                    <button class="btn btn-default nextbt">Show next Project</button>
+                    <button class="btn btn-default prevbt">Show previous Project</button>
+                </div>
             </div>
 
         </div>
@@ -172,7 +176,7 @@
 </div>
 <script src="{{ asset('js/modernizr.custom.js') }}"></script>
 <script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
-<script src="{{ asset('js/slider1.js') }}"></script>
+<script src="{{ asset('js/slider.js') }}"></script>
 <script src="{{ asset('js/home.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
