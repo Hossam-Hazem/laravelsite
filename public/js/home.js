@@ -124,7 +124,7 @@ $(document).ready(function () {
         GetDown('.WelcomeHead','.HomeBody');
     })
     $(window).scroll(function() {
-        if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        if(parseInt($(window).scrollTop() + $(window).height()) == $(document).height()) {
             setTimeout(function(){
                 if(currentpage=='.WelcomeHead') {
                     console.log('ha3')
@@ -134,7 +134,7 @@ $(document).ready(function () {
                     GetDown( '.Skills','.Projects');
                 }
 
-            },3000)
+            },500)
 
         }
     });

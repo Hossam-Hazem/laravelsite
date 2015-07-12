@@ -9,8 +9,9 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
-    <link rel="stylesheet" href="{{asset('css/home1.css')}}"/>
-    <link rel="stylesheet" href="{{asset('css/slider.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/slider1.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/home.css')}}"/>
+
 </head>
 <body>
 <div class="WelcomeDiv"></div>
@@ -22,7 +23,7 @@
             <div class="WelcomeImagediv"><img src="{{asset('images/myimage.jpg')}}" class="WelcomeImage"/></div>
         </div>
         <div class="infoDiv">
-            <h4 class="glyphicon glyphicon-circle-arrow-up"></h4>
+            <h4 class="glyphicon glyphicon-circle-arrow-up glyphHover"></h4>
 
             <div class="scrolling">
                 <div class="centertext WelcomeText" id="e0">German University in Cairo Student</div>
@@ -36,11 +37,11 @@
                 <div class="centertext WelcomeText" id="e8">Hard Worker</div>
                 <div class="centertext WelcomeText" id="e9">Fast Learner</div>
             </div>
-            <h4 class="glyphicon glyphicon-circle-arrow-down"></h4>
+            <h4 class="glyphicon glyphicon-circle-arrow-down glyphHover"></h4>
         </div>
         <footer class="BodyArrowouterDiv">
-            <div><h1 class="glyphicon glyphicon-menu-down BodyArrow"></h1></div>
-            <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down "></h1></div>
+            <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
+            <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
         </footer>
     </div>
 </div>
@@ -101,36 +102,77 @@
     <section class="Projects page">
         <div class="SkillsHeaderDiv">
             <div class="SkillsHeader"><span class="SkillsHeaderSpan">Projects</span></div>
-            <div class="WebDevelopmentHeader">
-                <span class="WebDevelopmentHeaderSpan">My Projects</span>
-            </div>
+        </div>
+        <div class="WebDevelopmentHeader">
+            <span class="WebDevelopmentHeaderSpan">My Projects</span>
         </div>
         <div class="ProjectsBody">
-            <div class='main'>
+            <div class='myProjectsSlider sliderMain'>
 
                 @for($c=0;$c<count($myprojects);$c++)
                     <div class='slide ' id='p{{$c}}'>{{$myprojects[$c]->name}}</div>
                 @endfor
-                <div class='sliderIcons'>
-                    <ul class="sliderIconsL">
-                    </ul>
+                <div class='slide ' id='p3'>
+                    <div class='photosSlider sliderMain'>
+                        <div class='slide ' id='p0'>1</div>
+                        <div class='slide' id='p1'>2</div>
+                        <div class='slide ' id='p2'>3</div>
+                        <div class='slide' id='p3'>4</div>
+                        <div class='slide' id='p4'>5</div>
+                        <div class='sliderIcons'>
+                            <ul class="sliderIconsL">
+                            </ul>
+                        </div>
+                        <div class="ButtonDiv">
+                            <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
+                            <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="ButtonDiv">
-                    <button class="btn btn-default nextbt">Show next Project</button>
-                    <button class="btn btn-default prevbt">Show previous Project</button>
-                </div>
+                    <div class='sliderIcons'>
+                        <ul class="sliderIconsL">
+                        </ul>
+                    </div>
+                    <div class="ButtonDiv">
+                        <button class="btn btn-default nextbt">Show next Project</button>
+                        <button class="btn btn-default prevbt">Show previous Project</button>
+                    </div>
             </div>
 
         </div>
+        <div class="WebDevelopmentHeader">
+            <span class="WebDevelopmentHeaderSpan">University Cool Projects</span>
+        </div>
+        <div class='schoolProjectsSlider sliderMain'>
+
+            @for($c=0;$c<count($myprojects);$c++)
+                <div class='slide ' id='p{{$c}}'>
+                    <div class="projectHeader">{{$myprojects[$c]->name}}</div>
+
+                </div>
+            @endfor
+            <div class='sliderIcons'>
+                <ul class="sliderIconsL">
+                </ul>
+            </div>
+            <div class="ButtonDiv">
+                <button class="btn btn-default nextbt">Show next Project</button>
+                <button class="btn btn-default prevbt">Show previous Project</button>
+            </div>
+        </div>
     </section>
     <section class="ContactMe"></section>
-    <footer></footer>
+</div>
+
+
+<footer></footer>
 
 
 </div>
 <script src="{{ asset('js/modernizr.custom.js') }}"></script>
 <script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
-<script src="{{ asset('js/slider.js') }}"></script>
+<script src="{{ asset('js/slider1.js') }}"></script>
 <script src="{{ asset('js/home.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>

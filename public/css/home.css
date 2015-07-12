@@ -76,7 +76,7 @@ body{
     opacity:0.4;
 
 }
-.glyphicon:hover{
+.glyphHover:hover{
     color:white;
 }
 .BodyArrowouterDiv{
@@ -277,9 +277,18 @@ table tr td{
 
 
 
+.photosSlider{
+    width: 50%;
+    margin:0 auto;
+    height:300px;
 
+}
 
-
+.photoSliderButton{
+    top:0;
+    padding: 150px 20px;
+    font-size: 30px;
+}
 
 
 
