@@ -10,8 +10,10 @@
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
     <link rel="stylesheet" href="{{asset('css/slider.css')}}"/>
-    <link rel="stylesheet" href="{{asset('css/home.css')}}"/>
-
+    <link rel="stylesheet" href="{{asset('css/home1.css')}}"/>
+    <script src="{{ asset('js/modernizr.custom.js') }}"></script>
+    <script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
+    <script src="{{ asset('js/slider1.js') }}"></script>
 </head>
 <body>
 <div class="WelcomeDiv"></div>
@@ -51,18 +53,21 @@
         <nav class="HBNav">
             <div class="HBNavX">
                 <img class='HBNavXImage' src="{{asset('images/myimage.jpg')}}"/></img>
+                <div class="HBNavXH">H</div>
                 <div class="HBNavXName">
-                    <span class="HBNavXName">Hossam Hazem</span>
+                    <span class="HBNavXNameFirst">ossam</span>
+                    <span class="HBNavXNameLast">azem</span>
                 </div>
             </div>
             <div class="HBNavMenu">
                 <div class="HBNavItem"><a class="HBNavItemLink" href="">Skills</a></div>
-                <div class="HBNavItem"><a class="HBNavItemLink" href="">My Projects</a></div>
-                <div class="HBNavItem"><a class="HBNavItemLink" href="">School Projects</a></div>
+                <div class="HBNavItem"><a class="HBNavItemLink" href="">Projects</a></div>
                 <div class="HBNavItem"><a class="HBNavItemLink" href="">Contact me</a></div>
             </div>
         </nav>
     </header>
+
+
 
     <section class="Skills page">
 
@@ -110,30 +115,34 @@
             <div class='myProjectsSlider sliderMain'>
 
                 @for($c=0;$c<count($myprojects);$c++)
-                    <div class='slide ' id='p{{$c}}'>{{$myprojects[$c]->name}}</div>
-                @endfor
-                <div class='slide ' id='p3'>
-                    <div class="projectHead">haaaaa33</div>
-                    <div class='photosSlider sliderMain'>
-                        <div class='slide ' id='p0'>1</div>
-                        <div class='slide' id='p1'>2</div>
-                        <div class='slide ' id='p2'>3</div>
-                        <div class='slide' id='p3'>4</div>
-                        <div class='slide' id='p4'>5</div>
-                        <div class='sliderIcons'>
-                            <ul class="sliderIconsL">
-                            </ul>
+                    <div class='slide ' id='p{{$c}}'>
+                        <div class="projectHead">{{$myprojects[$c]->name}}</div>
+                        <div class='photosSlider myProjectPhotosSlider{{$c}} sliderMain'>
+                            <?php
+                            $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $myprojects[$c]->name)
+                            ?>
+                            @for($cp=0;$cp<count($filesDestination);$cp++)
+                                <div class='slide photo' id='p{{$cp}}'
+                                     style="background-image:url('{{URL::asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                </div>
+                            @endfor
+                            <div class='sliderIcons'>
+                                <ul class="sliderIconsL">
+                                </ul>
+                            </div>
+                            <div class="ButtonDiv">
+                                <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
+                                <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
+                            </div>
                         </div>
-                        <div class="ButtonDiv">
-                            <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
-                            <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
+                        <div class="projectDescription">
+                            <div class="projectDate"><span class="projectLabel">Made in:</span> <span
+                                        class="projectText">{{$myprojects[$c]->date}}</span></div>
+                            <p> {{$myprojects[$c]->description}}</p>
                         </div>
                     </div>
-                    <div class="projectDescription"><p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad
-                            autem consectetur ea esse et id magni, odio placeat quae quaerat soluta suscipit ut. Maxime
-                            molestias mollitia sapiente velit veritatis?</p></div>
-
-                </div>
+                    <script>slider('.myProjectPhotosSlider{{$c}}')</script>
+                @endfor
                 <div class='sliderIcons'>
                     <ul class="sliderIconsL">
                     </ul>
@@ -150,11 +159,36 @@
         </div>
         <div class='schoolProjectsSlider sliderMain'>
 
-            @for($c=0;$c<count($myprojects);$c++)
+            @for($c=0;$c<count($schoolprojects);$c++)
                 <div class='slide ' id='p{{$c}}'>
-                    <div class="projectHeader">{{$myprojects[$c]->name}}</div>
-
+                    <div class="projectHead">{{$schoolprojects[$c]->name}}</div>
+                    <div class='photosSlider schoolProjectPhotosSlider{{$c}} sliderMain'>
+                        <?php
+                        $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name)
+                        ?>
+                        @for($cp=0;$cp<count($filesDestination);$cp++)
+                            <div class='slide photo' id='p{{$cp}}'
+                                 style="background-image:url('{{URL::asset('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                            </div>
+                        @endfor
+                        <div class='sliderIcons'>
+                            <ul class="sliderIconsL">
+                            </ul>
+                        </div>
+                        <div class="ButtonDiv">
+                            <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
+                            <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
+                        </div>
+                    </div>
+                    <div class="projectDescription">
+                        <div class="projectDate"><span class="projectLabel">Made in:</span> <span
+                                    class="projectText">{{$schoolprojects[$c]->date}}</span></div>
+                        <div class="projectCourse"><span class="projectLabel">Course:</span> <span
+                                    class="projectText">{{$schoolprojects[$c]->course}}</span></div>
+                        <p> {{$schoolprojects[$c]->description}}</p>
+                    </div>
                 </div>
+                <script>slider('.schoolProjectPhotosSlider{{$c}}')</script>
             @endfor
             <div class='sliderIcons'>
                 <ul class="sliderIconsL">
@@ -166,7 +200,27 @@
             </div>
         </div>
     </section>
-    <section class="ContactMe"></section>
+    <section class="ContactMe page">
+        <div class="contactMeContainer">
+            <div class="contactMeInnerContainer">
+                <div style="text-align: center;"><h1>Contact me!</h1></div>
+                {!! Form::open(['url'=>'Contact'])!!}
+                <div class="form-group">
+                    {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Name:'])!!}
+                </div>
+                <div class="form-group">
+                    {!!Form::text('email',null,['class'=>'form-control','placeholder'=>'Email:'])!!}
+                </div>
+                <div class="form-group">
+                    {!!Form::textarea('message',null,['class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    {!!Form::submit('Send',['class' => 'btn btn-primary form-control','id'=>'submit'])!!}
+                </div>
+                {!! Form::close()!!}
+            </div>
+        </div>
+    </section>
 </div>
 
 
@@ -174,10 +228,8 @@
 
 
 </div>
-<script src="{{ asset('js/modernizr.custom.js') }}"></script>
-<script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
-<script src="{{ asset('js/slider.js') }}"></script>
-<script src="{{ asset('js/home.js') }}"></script>
+
+<script src="{{ asset('js/home1.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,7 +1,10 @@
 $(document).ready(function () {
     slider('.myProjectsSlider');
     slider('.schoolProjectsSlider');
-    slider('.photosSlider');
+    //slider('.photosSlider');
+    //slider('.photosSlider2')
+    //slider('.photosSlider1')
+    //slider('.photosSlider0')
 });
 function slider(maindiv) {
     var counter = 0;

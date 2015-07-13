@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $schoolprojects = Project::SchoolProject()->latest();
+        $schoolprojects = Project::SchoolProject()->latest()->get();
         $myprojects = Project::MyProject()->latest()->get();
         $skills=Skill::all();
 

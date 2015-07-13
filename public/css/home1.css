@@ -105,68 +105,68 @@ li{
     list-style-type: none;
 }
 .Header{
-    position: fixed;
-    z-index: 2;
-}
-.HBHeaderList{
-    width:100%
-    display:table;
-}
-.HBHeaderX,.HBHeaderMenu{
-    display:table-cell;
-}
-.HBHeaderXList{
-}
-.HBHeaderXNameItem, .HBHeaderXImageItem{
-    display: inline;
-}
-.HBHeaderXImage{
-    border-radius:100%;
-    width:8%;
-}
-
-.Header{
-    background-color:rgba(69,189,255,0.6);
-
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 1;
 }
 .HBNav{
-    padding-left:5%;
-    padding-right:5%;
-    color:white;
-    display:block;
-}
-a{
-    color:inherit;
-    text-decoration: none;
-}
-.HBNavXImage{
-    border-radius:100%;
-    width:13%;
-    margin-top:-20px;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-bottom: 10px;
+    width:100%;
+    padding:0 5%;
+    padding-top: 20px;
+    background-color: gold;
+    height: 80px;
+
 }
 .HBNavX{
-    display: inline-block;
-    width:40%;
-    padding-bottom: 10px;
+    float:left;
+    display: inline;
+    width: 20%;
 }
 .HBNavMenu{
-    display:inline-block;
-    width:50%;
+    width: 70%;
+    padding-left: 20%;
+    display: flex;
+    float: right;
+}
+.HBNavXImage{
+    display:inline;
+    border-radius:100%;
+    width:30%;
+    margin-top: -20px;
+}
+.HBNavXH{
+    display: inline;
+    font-family: 'Oswald';
+    font-size:35px;
 }
 .HBNavXName{
     display:inline-block;
     font-family: 'Oswald';
-    font-size: 35px;
-    padding-top: 5px;
+    font-size: 20px;
+    margin-top: -20px;
+}
+.HBNavXNameFirst{
+    display: block;
+    padding: 0;
+}
+.HBNavXNameLast{
+    display: block;
+    padding: 0;
+    margin-top: -10px;
 }
 .HBNavItem{
-    display:inline-block;
+    display: inline;
     margin-right:6%;
     font-size: 20px;
-    padding-bottom:15px;
-    border-bottom-style:inset;
-    border-bottom-color:rgba(0,0,0,0);
-
+    padding-bottom: 12px;
+    margin-top: 20px;
+    border-bottom: inset rgba(0, 0, 0, 0);
 }
 .HBNavItem:hover{
     border-bottom-color: #00A9DE;
@@ -270,6 +270,7 @@ table tr td{
 }
 .Projects{
     background-color: #ffffff;
+    padding-bottom: 100px;
 }
 .ProjectsHeaderSpan{
     margin-bottom: 5%;
@@ -307,6 +308,54 @@ table tr td{
     border-radius: 10%;
     border-color:orange ;
 }
+
+.photo{
+    background-size: 100%;
+}
+.projectLabel{
+    font-weight: bold;
+}
+.projectText{
+    padding-left: 10px;
+}
+.ContactMe{
+    display: none;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    z-index: 5;
+    background-color: rgba(0,0,0,0.6);
+
+}
+.contactMeContainer{
+    background-color: #ffffff;
+    width: 500px;
+    height: 500px;
+    border-radius: 5%;
+    border-style: solid;
+    text-align: center;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+}
+.contactMeInnerContainer{
+    padding:0 50px;
+}
+
+
+
+
+
 
 
 

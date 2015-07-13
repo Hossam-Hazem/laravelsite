@@ -29,7 +29,7 @@ $(document).ready(function () {
     ///////////////////////
     $('.HomeBody').addClass('hidden');
     $('.Projects').addClass('hidden');
-    $('.ContactMe').addClass('hidden');
+   // $('.ContactMe').addClass('hidden1');
 
     ///////////////////////////////////////////
     //Skills adjusting star rating
@@ -85,7 +85,7 @@ $(document).ready(function () {
              }
          }
      });
-
+//////////////////////////////////
 
 
 
@@ -123,6 +123,17 @@ $(document).ready(function () {
     $('.BodyArrowouterDiv').click(function () {
         GetDown('.WelcomeHead','.HomeBody');
     })
+    $('html').click(function() {
+        if($('.ContactMe').css('display')=='block'){
+            console.log('ha3')
+            $('.ContactMe').fadeOut();
+        }
+    });
+
+    $('.contactMeContainer').click(function(event){
+        console.log('event')
+        event.stopPropagation();
+    });
     $(window).scroll(function() {
         if(parseInt($(window).scrollTop() + $(window).height()) == $(document).height()) {
             setTimeout(function(){
@@ -133,11 +144,16 @@ $(document).ready(function () {
                 if(currentpage=='.HomeBody'){
                     GetDown( '.Skills','.Projects');
                 }
+                if(currentpage=='.Projects'){
+                    $contact=$('.ContactMe');
+                    $contact.fadeIn();
+                }
 
             },500)
 
         }
     });
+
 
 
 
