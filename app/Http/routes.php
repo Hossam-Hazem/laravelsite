@@ -19,6 +19,7 @@ Route::post('/create','ProjectController@store');
 Route::get('/newskill','HomeController@createSkill');
 Route::post('/createskill','HomeController@storeSkill');
 
+Route::post('/newRating','HomeController@storeRating');
 
 Route::controllers([
     'auth'=>'Auth\AuthController'

@@ -10,12 +10,13 @@
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
     <link rel="stylesheet" href="{{asset('css/slider.css')}}"/>
-    <link rel="stylesheet" href="{{asset('css/home1.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/home.css')}}"/>
     <script src="{{ asset('js/modernizr.custom.js') }}"></script>
     <script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
     <script src="{{ asset('js/slider1.js') }}"></script>
 </head>
 <body>
+<input type="hidden" id="token" value="{{ csrf_token() }}">
 <div class="WelcomeDiv"></div>
 
 <div class="WelcomeHead page">
@@ -87,9 +88,9 @@
                             @foreach($skills as $skill)
                                 <tr>
                                     @if($skill->isIcon)
-                                        <td><i class="icon {{$skill->path}}"></i></td>
+                                        <td><i class="icon {{$skill->path}}" title="{{$skill->skill}}"></i></td>
                                     @else
-                                        <td><img src="{{asset('images/'.$skill->path)}}" class="iconimage"/></td>
+                                        <td><img src="{{asset('images/'.$skill->path)}}" alt="{{$skill->skill}}" title="{{$skill->skill}}" class="iconimage"/></td>
                                     @endif
                                     <td>
                                         <div class="Stars vert-align">{{$skill->rating}}</div>
@@ -229,7 +230,7 @@
 
 </div>
 
-<script src="{{ asset('js/home1.js') }}"></script>
+<script src="{{ asset('js/home.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
