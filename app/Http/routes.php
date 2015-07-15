@@ -18,6 +18,8 @@ Route::post('/create','ProjectController@store');
 
 Route::get('/newskill','HomeController@createSkill');
 Route::post('/createskill','HomeController@storeSkill');
+Route::get('/newskilltype','HomeController@createSkillType');
+Route::post('/createskilltype','HomeController@storeSkillType');
 
 Route::post('/newRating','HomeController@storeRating');
 

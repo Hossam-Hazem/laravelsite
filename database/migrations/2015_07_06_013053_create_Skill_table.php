@@ -14,14 +14,16 @@ class CreateSkillTable extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('skill_type_id')->unsigned();
             $table->string('skill');
             $table->integer('rating');
-            $table->string('type');
+            $table->string('Description');
             $table->boolean('isIcon');
             $table->string('path');
             $table->timestamps();
-            $table->integer('skillType_id');
-            $table->foreign('skillType_id')->references('id')->on('skillTypes');
+        });
+        Schema::table('skills', function($table) {
+            $table->foreign('skill_type_id')->references('id')->on('skillTypes');
         });
     }
 

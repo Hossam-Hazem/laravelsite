@@ -18,18 +18,22 @@
         {!! Form::text('rating',null,['class'=>'form-control'])!!}
     </div>
     <div class="form-group">
-        {!! Form::label('type','Skill Type:')!!}
-        {!! Form::text('type',null,['class'=>'form-control'])!!}
+        {!! Form::label('skill_type_id','Skill Type:')!!}
+        {!! Form::select('skill_type_id', $skillType);!!}
     </div>
     <div class="form-group">
         <div class="checkbox-inline" >
             {!!Form::checkbox('isIcon', 'true',null,['class'=>'checkbox'])!!}
-            {!!Form::label('isIcon','is it an icon or a normal image?')!!}
+            {!!Form::label('isIcon','is it an icon?')!!}
         </div>
     </div>
     <div class="form-group">
         {!! Form::label('path','if it is an icon please enter the class other wise enter image name:')!!}
         {!! Form::text('path',null,['class'=>'form-control'])!!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('Description','Description:')!!}
+        {!! Form::textarea('Description',null,['class'=>'form-control'])!!}
     </div>
     {!!Form::submit('create it!',['class' => 'btn btn-primary form-control','id'=>'submit'])!!}
     {!! Form::close()!!}

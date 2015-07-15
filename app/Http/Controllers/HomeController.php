@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Skill;
 use App\Rating;
+use App\SkillType;
 
 class HomeController extends Controller
 {
@@ -20,16 +21,32 @@ class HomeController extends Controller
         $schoolprojects = Project::SchoolProject()->latest()->get();
         $myprojects = Project::MyProject()->latest()->get();
         $skills=Skill::all();
-
-        return view('home',compact('skills','schoolprojects','myprojects'));
+        $skillTypes=SkillType::all();
+       //dd($skillTypes);
+        return view('home',compact('skillTypes','schoolprojects','myprojects'));
     }
     public function createSkill(){
-        return view('home.createSkill');
+       $skillType= SkillType::lists('name','id');
+        return view('home.createSkill',compact('skillType'));
     }
 
+    public function createSkillType()
+    {
+        return view ('home.createSkillType');
+    }
+
+    public function storeSkillType()
+    {
+        $input=Request::all();
+        SkillType::create($input);
+        return redirect('newskilltype');
+    }
     public function storeSkill()
     {
         $input = Request::all();
+        //dd($input);
+        $input['skill_type_id']=(int) $input['skill_type_id'];
+        //dd($input);
         $Skill= Skill::create($input);
         return redirect('newskill');
     }

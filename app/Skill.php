@@ -12,6 +12,8 @@ class Skill extends Model
         'type',
         'isIcon',
         'path',
+        'skill_type_id',
+        'Description'
     ];
     public function setisIconAttribute($input){
         if($input==null){

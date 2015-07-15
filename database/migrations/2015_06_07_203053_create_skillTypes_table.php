@@ -15,6 +15,7 @@ class CreateSkillTypesTable extends Migration
         Schema::create('skillTypes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->boolean('needRating');
             $table->timestamps();
         });
     }
