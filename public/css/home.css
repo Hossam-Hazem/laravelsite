@@ -2,6 +2,7 @@ body{
     background: silver;
     overflow-x: hidden ;
     transform-style: preserve-3d;
+    background-color: #2C3E50;
 
 }
 .bodyAnimate{
@@ -119,7 +120,7 @@ li{
     width:100%;
     padding:0 5%;
     padding-top: 20px;
-    background-color: gold;
+    background-color: #ECF0F1;
     height: 80px;
 
 }
@@ -190,11 +191,9 @@ li{
     left:0;
     width: 100%;
     height: 100%;
-    background-color:#45BDFF;
 }
 .Skills{
     padding-bottom: 5%;
-    background-color: #ffffff;
 }
 .SkillsHeaderDiv{
     padding-bottom: 50px;
@@ -203,35 +202,50 @@ li{
 .SkillsHeader{
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #E74C3C;
     line-height: 0.001em;
 }
 .SkillsHeaderSpan{
-    background:#fff;
+    background:#2C3E50;
     padding:0 10px;
     font-size:30px;
     font-family: 'Ubuntu';
     font-weight: bold;
-    color:#00A9DE;
+    color:#E74C3C;
 
 }
 .MyHeader{
-    padding-top:50px;
+    padding-top: 50px;
     width: 100%;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid;
     line-height: 0.001em;
-    margin-bottom:50px;
+    margin-bottom: 50px;
+    border-color: inherit;
+    background-color: inherit;
 }
 .MyHeaderSpan{
-    background:#fff;
-    padding:0 10px;
-    font-size:20px;
+    background: inherit;
+    padding: 0 10px;
+    font-size: 20px;
     font-family: 'Ubuntu';
     font-weight: bold;
+    color: inherit;
 }
 table {
     border-collapse: collapse;
 }
+tbody{
+    border:hidden;
+}
+th{
+    font-size: 25px;
+    font-family: 'Ubuntu';
+    color:inherit;
+}
+tr{
+    border:hidden;
+}
+
 .table tbody>tr>td.vert-align{
     vertical-align: middle;
 }
@@ -257,60 +271,92 @@ table tr td{
 }
 .icon{
     font-size: 50px;
-    color:#00A9DE
+    color: inherit;
 }
 .iconimage{
     font-size: 50px;
     width:1em;
+    text-align: center;
+    margin: 0 auto;
+}
+.headImage{
+    width:2em;
 }
 .Stars{
     vertical-align: middle;
 }
 .star{
     font-size: 35px;
-    color:#00A9DE;
+    color:inherit;
 }
 .SkillsOut{
     margin: 0 100px;
     border-style: solid;
-    border-color: lightgrey;
     border-radius: 2%;
     border-width: thin;
+    border-color:inherit;
 }
 .Skill{
     padding-bottom: 20px;
     padding-top: 20px;
-    border-bottom: thin dashed lightgrey;
+    border-bottom: thin dashed #E74C3C;
     font-size:18px;
+    font-family: 'Ubuntu';
+    color:inherit;
+}
+.SkillsTypeOut{
+    color:#ECF0F1;
+    border-color:#E74C3C;
+    background-color: #2C3E50;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: thick;
+}
+.SkillsTypeOutOdd{
+    color:#3498DB;
+    border-color:#2980B9;
+    background-color:#ECF0F1;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: thick;
+}
+.EvenTable>tbody>tr:nth-of-type(odd) {
+    background-color: #3D5A77;
+}
+.OddTable>tbody>tr:nth-of-type(odd) {
+
 }
 .ExpH{
     text-align: center;
     font-family: 'oswald';
-    font-size:20px;
+    font-size:25px;
     font-weight: bold;
     padding-top: 10px;
 }
 .ExpImg{
-    width: 1em;
     text-align: center;
     margin:0 auto;
 }
 .Projects{
-    background-color: #ffffff;
     padding-bottom: 100px;
 }
 .ProjectsHeaderSpan{
     margin-bottom: 5%;
 }
 
-.myProjectsSlider{
-    border-style: groove;
-}
 .projectHead{
-    color:orange;
+    color:#E74C3C;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+}
+.sliderMain{
+    border-color:#E74C3C;
+    border-style: groove;
 }
 .photosSlider{
     width: 75%;
@@ -326,6 +372,10 @@ table tr td{
 }
 .photoSliderButton:hover {
     background-color: rgba(0,0,0,0.1);
+}
+.btn-default {
+    background-color: #3498DB;
+    border-color:rgba(0,0,0,0);
 }
 .projectDescription{
     font-size: 18px;
@@ -361,7 +411,7 @@ table tr td{
 
 }
 .contactMeContainer{
-    background-color: #ffffff;
+    background-color: #E74C3C;
     width: 500px;
     height: 500px;
     border-radius: 5%;

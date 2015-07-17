@@ -76,55 +76,68 @@
             <div class="SkillsHeader"><span class="SkillsHeaderSpan">Skills & Experience</span></div>
         </div>
         <div class="SkillsBody">
-            @foreach($skillTypes as $skillType)
-                <div class="SkillsTypeOut">
-                    <div class="MyHeader">
-                        <span class="MyHeaderSpan">{{$skillType->name}}</span>
-                    </div>
-                    <div class="SkillsTypeBody">
-                        @if($skillType->needRating==true)
-                            <div class="table-responsive">
-                                <table class="table table-striped table-condensed">
-                                    <th>Skill</th>
-                                    <th>Proficiency</th>
-                                    @foreach($skillType->skills as $skill)
-                                        <tr>
-                                            @if($skill->isIcon)
-                                                <td><i class="icon {{$skill->path}}" title="{{$skill->skill}}"></i></td>
-                                            @else
-                                                <td><img src="{{asset('images/'.$skill->path)}}" alt="{{$skill->skill}}"
-                                                         title="{{$skill->skill}}" class="iconimage"/></td>
-                                            @endif
-                                            <td>
-                                                <div class="Stars vert-align">{{$skill->rating}}</div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </table>
-                            </div>
-                        @elseif($skillType->name=='Experience')
-                            <div class="SkillsOut">@foreach($skillType->skills as $skill)
-                                    <div class="Skill">
-                                        <div class="ExpH">{{$skill->skill}}</div>
-                                        <div class="ExpImg"><img src="{{asset('images/'.$skill->path)}}"
-                                                                 alt="{{$skill->skill}}"
-                                                                 title="{{$skill->skill}}" class="iconimage"/></div>
-                                        <div class="ExpDesc">{{$skill->Description}}</div>
-                                    </div>
-
-                                @endforeach</div>
-
+            @foreach($skillTypes as $c=>$skillType)
+                @if($c%2==0)
+                    <div class="SkillsTypeOutOdd">
                         @else
-                            <div class="SkillsOut">@foreach($skillType->skills as $skill)
-                                    <div class="Skll">{{$skill->skill}}</div>
-                                @endforeach</div>
+                            <div class="SkillsTypeOut">
+                                @endif
+                                <div class="MyHeader">
+                                    <span class="MyHeaderSpan">{{$skillType->name}}</span>
+                                </div>
+                                <div class="SkillsTypeBody">
+                                    @if($skillType->needRating==true)
+                                        <div class="table-responsive">
+                                            @if($c%2==0)
+                                            <table class="OddTable table table-striped table-condensed">
+                                                @else
+                                                    <table class="EvenTable table table-striped table-condensed">
+                                                        @endif
+                                                @if($c==0)
+                                                    <th></th>
+                                                    <th>Proficiency</th>
+                                                @endif
+                                                @foreach($skillType->skills()->orderBy('rating','desc')->get() as $skill)
+                                                    <tr>
+                                                        @if($skill->isIcon)
+                                                            <td><i class="icon {{$skill->path}}"
+                                                                   title="{{$skill->skill}}"></i></td>
+                                                        @else
+                                                            <td><img src="{{asset('images/'.$skill->path)}}"
+                                                                     alt="{{$skill->skill}}"
+                                                                     title="{{$skill->skill}}" class="iconimage"/></td>
+                                                        @endif
+                                                        <td>
+                                                            <div class="Stars vert-align">{{$skill->rating}}</div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </table>
+                                        </div>
+                                    @elseif($skillType->name=='Experience')
+                                        <div class="SkillsOut">@foreach($skillType->skills as $skill)
+                                                <div class="Skill">
+                                                    <div class="ExpH">{{$skill->skill}}</div>
+                                                    <div class="ExpImg"><img src="{{asset('images/'.$skill->path)}}"
+                                                                             alt="{{$skill->skill}}"
+                                                                             title="{{$skill->skill}}"
+                                                                             class="iconimage headimage"/></div>
+                                                    <div class="ExpDesc">{{$skill->Description}}</div>
+                                                </div>
 
-                        @endif
+                                            @endforeach</div>
 
+                                    @else
+                                        <div class="SkillsOut">@foreach($skillType->skills as $skill)
+                                                <div class="Skll">{{$skill->skill}}</div>
+                                            @endforeach</div>
+
+                                    @endif
+
+                                </div>
+                            </div>
+                            @endforeach
                     </div>
-                </div>
-            @endforeach
-        </div>
 
     </section>
 
