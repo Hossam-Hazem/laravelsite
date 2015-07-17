@@ -47,8 +47,10 @@ class ProjectController extends Controller
         for($c=0;$c<count($_FILES);$c++){
             $destinationPath='uploads/'.$project->name;
             $image= Input::file('photo'.$c);
-            $filename=$image->getClientOriginalName();
-            $image->move($destinationPath,$filename);
+            if($image!=null) {
+                $filename = $image->getClientOriginalName();
+                $image->move($destinationPath, $filename);
+            }
         }
         return redirect('createproject');
     }

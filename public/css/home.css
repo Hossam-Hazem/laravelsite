@@ -1,5 +1,4 @@
 body{
-    background: silver;
     overflow-x: hidden ;
     transform-style: preserve-3d;
     background-color: #2C3E50;
@@ -349,14 +348,22 @@ table tr td{
 }
 
 .projectHead{
-    color:#E74C3C;
+    color:inherit;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
 }
 .sliderMain{
-    border-color:#E74C3C;
-    border-style: groove;
+    border-color: inherit;
+    border-style: solid;
+    border-width: thin;
+}
+.myProjectSlide{
+    background-color: #ECF0F1;
+}
+.schoolProjectSlide{
+    background-color: inherit;
+    border-color: inherit;
 }
 .photosSlider{
     width: 75%;
@@ -381,9 +388,9 @@ table tr td{
     font-size: 18px;
     margin: 10px;
     padding: 10px;
-    border: medium;
-    border-radius: 10%;
-    border-color:orange ;
+    border-style: solid;
+    border-color: inherit;
+    border-width: thin;
 }
 
 .photo{

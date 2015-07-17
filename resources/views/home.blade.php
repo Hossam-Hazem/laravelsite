@@ -89,30 +89,31 @@
                                     @if($skillType->needRating==true)
                                         <div class="table-responsive">
                                             @if($c%2==0)
-                                            <table class="OddTable table table-striped table-condensed">
-                                                @else
-                                                    <table class="EvenTable table table-striped table-condensed">
-                                                        @endif
-                                                @if($c==0)
-                                                    <th></th>
-                                                    <th>Proficiency</th>
-                                                @endif
-                                                @foreach($skillType->skills()->orderBy('rating','desc')->get() as $skill)
-                                                    <tr>
-                                                        @if($skill->isIcon)
-                                                            <td><i class="icon {{$skill->path}}"
-                                                                   title="{{$skill->skill}}"></i></td>
-                                                        @else
-                                                            <td><img src="{{asset('images/'.$skill->path)}}"
-                                                                     alt="{{$skill->skill}}"
-                                                                     title="{{$skill->skill}}" class="iconimage"/></td>
-                                                        @endif
-                                                        <td>
-                                                            <div class="Stars vert-align">{{$skill->rating}}</div>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            </table>
+                                                <table class="OddTable table table-striped table-condensed">
+                                                    @else
+                                                        <table class="EvenTable table table-striped table-condensed">
+                                                            @endif
+                                                            @if($c==0)
+                                                                <th></th>
+                                                                <th>Proficiency</th>
+                                                            @endif
+                                                            @foreach($skillType->skills()->orderBy('rating','desc')->get() as $skill)
+                                                                <tr>
+                                                                    @if($skill->isIcon)
+                                                                        <td><i class="icon {{$skill->path}}"
+                                                                               title="{{$skill->skill}}"></i></td>
+                                                                    @else
+                                                                        <td><img src="{{asset('images/'.$skill->path)}}"
+                                                                                 alt="{{$skill->skill}}"
+                                                                                 title="{{$skill->skill}}"
+                                                                                 class="iconimage"/></td>
+                                                                    @endif
+                                                                    <td>
+                                                                        <div class="Stars vert-align">{{$skill->rating}}</div>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                        </table>
                                         </div>
                                     @elseif($skillType->name=='Experience')
                                         <div class="SkillsOut">@foreach($skillType->skills as $skill)
@@ -145,22 +146,70 @@
         <div class="SkillsHeaderDiv">
             <div class="SkillsHeader"><span class="SkillsHeaderSpan">Projects</span></div>
         </div>
-        <div class="MyHeader">
-            <span class="MyHeaderSpan">My Projects</span>
-        </div>
-        <div class="ProjectsBody">
-            <div class='myProjectsSlider sliderMain'>
+        <div class="MyProjects SkillsTypeOutOdd">
+            <div class="MyHeader">
+                <span class="MyHeaderSpan">My Projects</span>
+            </div>
+            <div class="ProjectsBody">
+                <div class='myProjectsSlider sliderMain '>
 
-                @for($c=0;$c<count($myprojects);$c++)
-                    <div class='slide ' id='p{{$c}}'>
-                        <div class="projectHead">{{$myprojects[$c]->name}}</div>
-                        <div class='photosSlider myProjectPhotosSlider{{$c}} sliderMain'>
+                    @for($c=0;$c<count($myprojects);$c++)
+                        <div class='slide myProjectSlide ' id='p{{$c}}'>
+                            <div class="projectHead">{{$myprojects[$c]->name}}</div>
+                            <div class='photosSlider myProjectPhotosSlider{{$c}} sliderMain'>
+                                <?php
+                                $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $myprojects[$c]->name)
+                                ?>
+                                @for($cp=0;$cp<count($filesDestination);$cp++)
+                                    <div class='slide photo' id='p{{$cp}}'
+                                         style="background-image:url('{{URL::asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                    </div>
+                                @endfor
+                                <div class='sliderIcons'>
+                                    <ul class="sliderIconsL">
+                                    </ul>
+                                </div>
+                                <div class="ButtonDiv">
+                                    <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
+                                    <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
+                                </div>
+                            </div>
+                            <div class="projectDescription">
+                                <div class="projectDate"><span class="projectLabel">Made in:</span> <span
+                                            class="projectText">{{$myprojects[$c]->date}}</span></div>
+                                <p> {{$myprojects[$c]->description}}</p>
+                            </div>
+                        </div>
+                        <script>slider('.myProjectPhotosSlider{{$c}}')</script>
+                    @endfor
+                    <div class='sliderIcons'>
+                        <ul class="sliderIconsL">
+                        </ul>
+                    </div>
+                    <div class="ButtonDiv">
+                        <button class="btn btn-default nextbt">Show next Project</button>
+                        <button class="btn btn-default prevbt">Show previous Project</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="schoolProjects SkillsTypeOut">
+            <div class="MyHeader">
+                <span class="MyHeaderSpan">University Cool Projects</span>
+            </div>
+            <div class='schoolProjectsSlider sliderMain '>
+
+                @for($c=0;$c<count($schoolprojects);$c++)
+                    <div class='slide schoolProjectSlide' id='p{{$c}}'>
+                        <div class="projectHead">{{$schoolprojects[$c]->name}}</div>
+                        <div class='photosSlider schoolProjectPhotosSlider{{$c}} sliderMain'>
                             <?php
-                            $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $myprojects[$c]->name)
+                            $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name)
                             ?>
                             @for($cp=0;$cp<count($filesDestination);$cp++)
                                 <div class='slide photo' id='p{{$cp}}'
-                                     style="background-image:url('{{URL::asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                     style="background-image:url('{{URL::asset('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
                                 </div>
                             @endfor
                             <div class='sliderIcons'>
@@ -174,11 +223,13 @@
                         </div>
                         <div class="projectDescription">
                             <div class="projectDate"><span class="projectLabel">Made in:</span> <span
-                                        class="projectText">{{$myprojects[$c]->date}}</span></div>
-                            <p> {{$myprojects[$c]->description}}</p>
+                                        class="projectText">{{$schoolprojects[$c]->date}}</span></div>
+                            <div class="projectCourse"><span class="projectLabel">Course:</span> <span
+                                        class="projectText">{{$schoolprojects[$c]->course}}</span></div>
+                            <p> {{$schoolprojects[$c]->description}}</p>
                         </div>
                     </div>
-                    <script>slider('.myProjectPhotosSlider{{$c}}')</script>
+                    <script>slider('.schoolProjectPhotosSlider{{$c}}')</script>
                 @endfor
                 <div class='sliderIcons'>
                     <ul class="sliderIconsL">
@@ -188,52 +239,6 @@
                     <button class="btn btn-default nextbt">Show next Project</button>
                     <button class="btn btn-default prevbt">Show previous Project</button>
                 </div>
-            </div>
-
-        </div>
-        <div class="MyHeader">
-            <span class="MyHeaderSpan">University Cool Projects</span>
-        </div>
-        <div class='schoolProjectsSlider sliderMain'>
-
-            @for($c=0;$c<count($schoolprojects);$c++)
-                <div class='slide ' id='p{{$c}}'>
-                    <div class="projectHead">{{$schoolprojects[$c]->name}}</div>
-                    <div class='photosSlider schoolProjectPhotosSlider{{$c}} sliderMain'>
-                        <?php
-                        $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name)
-                        ?>
-                        @for($cp=0;$cp<count($filesDestination);$cp++)
-                            <div class='slide photo' id='p{{$cp}}'
-                                 style="background-image:url('{{URL::asset('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
-                            </div>
-                        @endfor
-                        <div class='sliderIcons'>
-                            <ul class="sliderIconsL">
-                            </ul>
-                        </div>
-                        <div class="ButtonDiv">
-                            <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
-                            <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
-                        </div>
-                    </div>
-                    <div class="projectDescription">
-                        <div class="projectDate"><span class="projectLabel">Made in:</span> <span
-                                    class="projectText">{{$schoolprojects[$c]->date}}</span></div>
-                        <div class="projectCourse"><span class="projectLabel">Course:</span> <span
-                                    class="projectText">{{$schoolprojects[$c]->course}}</span></div>
-                        <p> {{$schoolprojects[$c]->description}}</p>
-                    </div>
-                </div>
-                <script>slider('.schoolProjectPhotosSlider{{$c}}')</script>
-            @endfor
-            <div class='sliderIcons'>
-                <ul class="sliderIconsL">
-                </ul>
-            </div>
-            <div class="ButtonDiv">
-                <button class="btn btn-default nextbt">Show next Project</button>
-                <button class="btn btn-default prevbt">Show previous Project</button>
             </div>
         </div>
     </section>
