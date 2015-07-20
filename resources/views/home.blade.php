@@ -43,9 +43,9 @@
             </div>
             <h4 class="glyphicon glyphicon-circle-arrow-down glyphHover"></h4>
         </div>
-        <footer class="BodyArrowouterDiv">
-            <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
-            <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
+        <footer class="BodyArrowDownDiv" id="Welcome">
+                <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
+                <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
         </footer>
     </div>
 </div>
@@ -62,16 +62,19 @@
                 </div>
             </div>
             <div class="HBNavMenu">
-                <div class="HBNavItem"><a class="HBNavItemLink" href="">Skills</a></div>
-                <div class="HBNavItem"><a class="HBNavItemLink" href="">Projects</a></div>
-                <div class="HBNavItem"><a class="HBNavItemLink" href="">Contact me</a></div>
+                <div class="HBNavItem" id="Skills"><span class="HBNavItemLink" href="">Skills</span></div>
+                <div class="HBNavItem" id="Projects"><span class="HBNavItemLink" href="">Projects</span></div>
+                <div class="HBNavItem" id="Contact"><span class="HBNavItemLink" href="">Contact me</span></div>
             </div>
         </nav>
     </header>
 
 
     <section class="Skills page">
-
+        <div class="BodyArrowUpDiv" id="Skills">
+            <div><h1 class="glyphicon glyphicon-menu-up BodyArrow glyphHover"></h1></div>
+            <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-up glyphHover"></h1></div>
+        </div>
         <div class="SkillsHeaderDiv">
             <div class="SkillsHeader"><span class="SkillsHeaderSpan">Skills & Experience</span></div>
         </div>
@@ -138,11 +141,20 @@
                                 </div>
                             </div>
                             @endforeach
+
                     </div>
+                    <footer class="BodyArrowDownDiv" id="Skills">
+                        <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
+                        <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
+                    </footer>
 
     </section>
 
     <section class="Projects page">
+        <div class="BodyArrowUpDiv" id="Projects">
+            <div><h1 class="glyphicon glyphicon-menu-up BodyArrow glyphHover"></h1></div>
+            <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-up glyphHover"></h1></div>
+        </div>
         <div class="SkillsHeaderDiv">
             <div class="SkillsHeader"><span class="SkillsHeaderSpan">Projects</span></div>
         </div>
@@ -188,7 +200,7 @@
                     </div>
                     <div class="ButtonDiv">
                         <button class="btn btn-default nextbt">Show next Project</button>
-                        <button class="btn btn-default prevbt">Show previous Project</button>
+                        <button class="btn btn-default prevbt">Show prev Project</button>
                     </div>
                 </div>
 
@@ -201,7 +213,7 @@
             <div class='schoolProjectsSlider sliderMain '>
 
                 @for($c=0;$c<count($schoolprojects);$c++)
-                    <div class='slide schoolProjectSlide' id='p{{$c}}'>
+                    <div class='slide ' id='p{{$c}}'>
                         <div class="projectHead">{{$schoolprojects[$c]->name}}</div>
                         <div class='photosSlider schoolProjectPhotosSlider{{$c}} sliderMain'>
                             <?php
@@ -241,6 +253,10 @@
                 </div>
             </div>
         </div>
+        <footer class="BodyArrowDownDiv" id="Projects">
+            <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
+            <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
+        </footer>
     </section>
     <section class="ContactMe page">
         <div class="contactMeContainer">
@@ -271,7 +287,7 @@
 
 </div>
 
-<script src="{{ asset('js/home.js') }}"></script>
+<script src="{{ elixir('js/home.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

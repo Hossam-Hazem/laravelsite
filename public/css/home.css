@@ -7,6 +7,9 @@ body{
 .bodyAnimate{
     overflow-y:hidden;
 }
+.AnimateFix{
+    position: fixed;
+}
 .WelcomeHead{
     box-sizing:border-box;
     position: relative;
@@ -79,17 +82,33 @@ body{
 .glyphHover:hover{
     color:white;
 }
-.BodyArrowouterDiv{
+.BodyArrowDownDiv{
     text-align: center;
-    width:4%;
-    border-radius:50%;
-    margin:0 auto;
+    width:50px;
     color:black;
     background-color:rgba(255,255,255,0.1);
+    margin: 50px auto 0;
 }
-.BodyArrowouterDiv:Hover{
+.BodyArrowDownDiv#Welcome{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.BodyArrowDownDiv:Hover{
     color:white;
 }
+.BodyArrowUpDiv{
+    text-align: center;
+    width:50px;
+    color:black;
+    background-color:rgba(255,255,255,0.1);
+    margin: 0 auto 5px;
+}
+.BodyArrowUpDiv:Hover{
+    color:white;
+}
+
 h1.BodyArrow{
     margin:0px;
     position:inherit;
@@ -175,6 +194,10 @@ li{
     color:#00A9DE;
     text-decoration: none;
 }
+.currentItem{
+    border-bottom-color: #E74C3C;
+
+}
 .page{
     position:absolute;
     width: 100%;
@@ -192,7 +215,7 @@ li{
     height: 100%;
 }
 .Skills{
-    padding-bottom: 5%;
+
 }
 .SkillsHeaderDiv{
     padding-bottom: 50px;
@@ -341,7 +364,7 @@ table tr td{
     margin:0 auto;
 }
 .Projects{
-    padding-bottom: 100px;
+
 }
 .ProjectsHeaderSpan{
     margin-bottom: 5%;
@@ -474,4 +497,46 @@ table tr td{
 @keyframes AnimateUpIn {
 
     from { -webkit-transform: translateY(100%); transform: translateY(100%); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.AnimateDownOut{
+    -webkit-animation: -webkit-AnimateDownOut 1s both ease;
+    animation: AnimateDownOut 1s both ease;
+}
+.AnimateDownIn{
+    -webkit-animation: -webkit-AnimateDownIn 1s both ease;
+    animation: AnimateDownIn 1s both ease;
+}
+@-webkit-keyframes AnimateDownOut {
+    from{}
+    to{ -webkit-transform:  translateY(100%);transform: translateY(100%);  }
+}
+@keyframes AnimateDownOut {
+    from { }
+    to {transform:translateY(100%);  }
+}
+
+
+@-webkit-keyframes AnimateDownIn {
+
+    from {  -webkit-transform:  translateY(-100%); }
+
+
+}
+@keyframes AnimateDownIn {
+
+    from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
 }
