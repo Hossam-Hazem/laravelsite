@@ -1,5 +1,9 @@
 $(document).ready(function () {
     //vars
+    $(window).load(function(){
+        $('.enter').html('Website Loaded');
+        setTimeout(function(){$('.enter').html('<a>Skip>></a>')},5000);
+    })
     var currentpage = '.WelcomeHead';
     //some modernizer thing
     var animEndEventNames = {
@@ -30,6 +34,7 @@ $(document).ready(function () {
         c = (c + 1) % l
     }, 3000)
     ///////////////////////
+    $('.WelcomeHead').addClass('hidden');
     $('.HomeBody').addClass('hidden');
     $('.Projects').addClass('hidden');
     // $('.ContactMe').addClass('hidden1');

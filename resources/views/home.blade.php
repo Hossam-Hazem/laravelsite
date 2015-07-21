@@ -11,16 +11,27 @@
           href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
     <link rel="stylesheet" href="{{asset('css/slider.css')}}"/>
     <link rel="stylesheet" href="{{elixir('css/home.css')}}"/>
-    <script src="{{ asset('js/modernizr.custom.js') }}"></script>
     <script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
-    <script src="{{ asset('js/slider1.js') }}"></script>
+    <script src="{{ elixir('js/cmdwriter.js') }}"></script>
 </head>
 <body>
 <input type="hidden" id="token" value="{{ csrf_token() }}">
 
-<div class="WelcomeDiv"></div>
-
-<div class="WelcomeHead page">
+<div class="WelcomeDiv page">
+    <div class ='consolewriter'>
+        <div class="consMsg other">123</div>
+        <div class="consMsg me">456789101112</div>
+        <div class="consMsg other">131///415161718</div>
+        <div class="consMsg me">19202122232425</div>
+        <div class="consMsg other">2627282930</div>
+        <div class="consMsg me">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi lectus, pharetra eget sem quis, viverra tincidunt neque. Morbi viverra, augue dictum commodo facilisis, turpis quam eleifend arcu, eget imperdiet enim purus eget mauris. Vivamus ac orci efficitur, tincidunt lacus sit amet, volutpat mauris. Cras viverra ligula lacus, id imperdiet elit malesuada ut. Curabitur fringilla, dolor eu tristique pharetra,</div>
+        <div class="writer"></div>
+        <span class="enter"><span class="flashText">Website Loading</span></span>
+    </div>
+</div>
+<script src="{{ asset('js/modernizr.custom.js') }}"></script>
+<script src="{{ asset('js/slider1.js') }}"></script>
+<div class="WelcomeHead page hidden">
     <div class="WelcomeLayer">
         <div class="WelcomeHeadHeader">
             <div class="WelcomeTag">Welcome</div>
@@ -49,7 +60,7 @@
         </footer>
     </div>
 </div>
-<div class="HomeBody page">
+<div class="HomeBody page hidden">
 
     <header class="Header">
         <nav class="HBNav">
@@ -150,7 +161,7 @@
 
     </section>
 
-    <section class="Projects page">
+    <section class="Projects page hidden">
         <div class="BodyArrowUpDiv" id="Projects">
             <div><h1 class="glyphicon glyphicon-menu-up BodyArrow glyphHover"></h1></div>
             <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-up glyphHover"></h1></div>
