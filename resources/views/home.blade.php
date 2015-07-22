@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('css/slider.css')}}"/>
     <link rel="stylesheet" href="{{elixir('css/home.css')}}"/>
     <script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
@@ -17,7 +18,7 @@
 <body>
 <input type="hidden" id="token" value="{{ csrf_token() }}">
 
-<div class="WelcomeDiv page">
+<div class="page WelcomeDiv">
     <div class ='consolewriter'>
         <div class="consMsg other">123</div>
         <div class="consMsg me">456789101112</div>
@@ -60,7 +61,7 @@
         </footer>
     </div>
 </div>
-<div class="HomeBody page hidden">
+<div class="HomeBody page ">
 
     <header class="Header">
         <nav class="HBNav">
@@ -154,14 +155,27 @@
                             @endforeach
 
                     </div>
-                    <footer class="BodyArrowDownDiv" id="Skills">
+                    <div class="BodyArrowDownDiv" id="Skills">
                         <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
                         <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
-                    </footer>
+                    </div>
+                <footer class="footer">
+                    <div class="footerInner">
+                        <div class="footerIcons">
+                            <span class="footerIcon"><a class ="fa fa-github" href="https://github.com/Hossam-Hazem"></a></span>
+                            <span class="footerIcon fa fa-mobile footerEMob" id="footerMobileIcon"></span>
+                            <span class="footerIcon fa fa-envelope-o footerEMob" id="footerEmailIcon"></span>
+                            <span class="footerIcon"><a class ="fa fa-linkedin-square" href="https://www.linkedin.com/in/hhazem"></a></span>
+                        </div>
+                        <div class="footerThing footerEmail myHidden">hossam.yehya@guc.edu.eg</div>
+                        <div class="footerThing footerMobile myHidden">01008761826</div>
+                        <div class="omdonya">صنع في مصر</div>
+                    </div>
+                </footer>
 
     </section>
 
-    <section class="Projects page hidden">
+    <section class="Projects page ">
         <div class="BodyArrowUpDiv" id="Projects">
             <div><h1 class="glyphicon glyphicon-menu-up BodyArrow glyphHover"></h1></div>
             <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-up glyphHover"></h1></div>
@@ -275,16 +289,16 @@
                 <div style="text-align: center;"><h1>Contact me!</h1></div>
                 {!! Form::open(['url'=>'Contact'])!!}
                 <div class="form-group">
-                    {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Name:'])!!}
+                    {!!Form::text('name',null,['class'=>'form-control contactName','placeholder'=>'Name:'])!!}
                 </div>
                 <div class="form-group">
-                    {!!Form::text('email',null,['class'=>'form-control','placeholder'=>'Email:'])!!}
+                    {!!Form::text('email',null,['class'=>'form-control contactEmail','placeholder'=>'Email:'])!!}
                 </div>
                 <div class="form-group">
-                    {!!Form::textarea('message',null,['class'=>'form-control'])!!}
+                    {!!Form::textarea('message',null,['class'=>'form-control contactMessage'])!!}
                 </div>
                 <div class="form-group">
-                    {!!Form::submit('Send',['class' => 'btn btn-primary form-control','id'=>'submit'])!!}
+                    {!!Form::submit('Send',['class' => 'btn btn-primary form-control sendButton','id'=>'submit'])!!}
                 </div>
                 {!! Form::close()!!}
             </div>

@@ -22,7 +22,7 @@ Route::get('/newskilltype','HomeController@createSkillType');
 Route::post('/createskilltype','HomeController@storeSkillType');
 
 Route::post('/newRating','HomeController@storeRating');
-
+Route::post('/Contact','HomeController@contact');
 Route::controllers([
     'auth'=>'Auth\AuthController'
 ]);

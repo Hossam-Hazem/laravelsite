@@ -9,16 +9,23 @@ body{
 }
 .WelcomeDiv{
     background-color: #ECF0F1;
-    height:100%
+    position: fixed !important;
+    height:100%;
+    z-index: 1001 !important;
 }
-
-.consolewriter{
+.WelcomeHead{
+    overflow: hidden !important;
+    width:100%;
+}
+.consolewriter {
     position: absolute;
     bottom: 0;
     width: 100%;
     color: black;
     font-size: 25px;
-
+}
+.vHidden{
+    visibility: hidden;
 }
 .Msg{
     background-color: yellow;
@@ -57,6 +64,10 @@ body{
     color: grey;
 
 }
+.skipButton{
+    cursor:pointer;
+}
+
 .AnimateFix{
     position: fixed;
 }
@@ -206,7 +217,7 @@ li{
 .HBNavXImage{
     display:inline;
     border-radius:100%;
-    width:30%;
+    width:6em;
     margin-top: -20px;
 }
 .HBNavXH{
@@ -509,12 +520,42 @@ table tr td{
 .contactMeInnerContainer{
     padding:0 50px;
 }
-
-
-
-
-
-
+.footer{
+    border-top: solid;
+    border-color: #E74C3C;
+    border-width: thin;
+    font-size: 30px;
+    color:#ECF0F1;
+}
+.footerInner{
+    text-align: center;
+}
+.footerIcon,a.fa{
+    cursor:pointer;
+    color:#ECF0F1;
+    text-decoration:none;
+}
+.footerIcon{
+    padding: 10px 10px;
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
+}
+.footerIcon:hover,a.fa:hover{
+    color:#E74C3C;
+    text-decoration:none;
+}
+.myHidden{
+    display: none;
+}
+.footerThing{
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 25px;
+}
+.footerSelected{
+    color:#3498DB;
+    background-color:#ECF0F1 ;
+}
 
 
 

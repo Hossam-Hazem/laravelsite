@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
 use Request;
 use App\Project;
 use App\Http\Requests;
@@ -56,6 +57,18 @@ class HomeController extends Controller
             $rating = new Rating($input);
             $rating->ip=Request::getClientIp();
             $rating->save();
+            return response(200);
+        }
+    }
+
+    public function contact()
+    {
+        if(Request::ajax()) {
+            Mail::raw('name: '. Request::get('name')." \n Email: ".Request::get('email')." \n Message: ".
+                Request::get('message'), function ($message) {
+                $message->from('hossamhazem94@gmail.com', 'My Website');
+                $message->to('hossamhazem94@gmail.com');
+            });
             return response(200);
         }
     }
