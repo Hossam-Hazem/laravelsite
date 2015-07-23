@@ -31,8 +31,8 @@
     </div>
 </div>
 <script src="{{ asset('js/modernizr.custom.js') }}"></script>
-<script src="{{ asset('js/slider1.js') }}"></script>
-<div class="WelcomeHead page hidden">
+<script src="{{ asset('js/slider.js') }}"></script>
+<div class="WelcomeHead page ">
     <div class="WelcomeLayer">
         <div class="WelcomeHeadHeader">
             <div class="WelcomeTag">Welcome</div>
@@ -55,10 +55,17 @@
             </div>
             <h4 class="glyphicon glyphicon-circle-arrow-down glyphHover"></h4>
         </div>
-        <footer class="BodyArrowDownDiv" id="Welcome">
-                <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
-                <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
-        </footer>
+        <div class="floatDown">
+            <div class="quote">
+                    <span class="quoteText">
+                        “If opportunity doesn't knock, build a door.”
+                    </span>
+            </div>
+            <div class="BodyArrowDownDiv" id="Welcome">
+                    <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
+                    <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="HomeBody page ">
@@ -238,7 +245,7 @@
             <div class='schoolProjectsSlider sliderMain '>
 
                 @for($c=0;$c<count($schoolprojects);$c++)
-                    <div class='slide ' id='p{{$c}}'>
+                    <div class='slide schoolProjectSlide' id='p{{$c}}'>
                         <div class="projectHead">{{$schoolprojects[$c]->name}}</div>
                         <div class='photosSlider schoolProjectPhotosSlider{{$c}} sliderMain'>
                             <?php
@@ -295,7 +302,7 @@
                     {!!Form::text('email',null,['class'=>'form-control contactEmail','placeholder'=>'Email:'])!!}
                 </div>
                 <div class="form-group">
-                    {!!Form::textarea('message',null,['class'=>'form-control contactMessage'])!!}
+                    {!!Form::textarea('message',null,['class'=>'form-control contactMessage','placeholder'=>"Want to contact me or have a feedback \n congrats, you are in the right place!"])!!}
                 </div>
                 <div class="form-group">
                     {!!Form::submit('Send',['class' => 'btn btn-primary form-control sendButton','id'=>'submit'])!!}

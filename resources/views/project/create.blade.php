@@ -36,6 +36,10 @@
                 {!!Form::label('course','which course?')!!}
                 {!!Form::text('course',null,['class'=>'form-control'])!!}
             </div>
+             <div class="form-group">
+                {!!Form::label('github','github Link')!!}
+                {!!Form::text('github',null,['class'=>'form-control'])!!}
+             </div>
             <div class="form-group">
                 {!!Form::label('related','is it very related to field?')!!}
                 {!!Form::select('related',['1'=>'unrelated','2'=>'kinda','3'=>'related '])!!}
@@ -45,6 +49,7 @@
                  <button class = 'photob btn'>Add new photo</button>
                  {!! Form::file('photo0',['accept'=>"image/*",'class'=>'invisible photoi','id'=>'i0'])!!}
               </div>
+
             <div class="form-group">
                 {!!Form::submit('create it!',['class' => 'btn btn-primary form-control','id'=>'submit'])!!}
             </div>

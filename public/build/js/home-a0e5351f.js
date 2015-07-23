@@ -28,11 +28,12 @@ $(document).ready(function () {
     }, 50)*/
     //  $('.WelcomeHead').width($(window).width());
 
-    $('.infoDiv').height($(window).height() - $('.WelcomeHeadHeader').height() - 80);
+    //$('.infoDiv').height($(window).height() - $('.WelcomeHeadHeader').height() - 80);
     //noinspection JSJQueryEfficiency
     console.log( $('.Header').height());
     $('.Skills').css('top', $('.Header').height());
     $('.Projects').css('top', $('.Header').height())
+
 
     /*Welcome page scroller
 
@@ -145,6 +146,7 @@ $(document).ready(function () {
             }
         })
     })
+
 //////////////////////////////////
 
 
@@ -245,19 +247,22 @@ $(document).ready(function () {
                 animateIt('.Skills', '.Projects','AnimateUpOut','AnimateUpIn');
                 $(document).scrollTop(0)
             }
-        }
-        if($item='Skills'){
-            if(currentpage=='.Projects') {
-                console.log('ha32');
-                animateIt('.Projects', '.Skills','AnimateDownOut','AnimateDownIn');
-                $(document).scrollTop(0)
+        }else {
+            if ($item == 'Contact') {
+                console.log('con')
+                $contact = $('.ContactMe');
+                setTimeout(function () {
+                    $contact.fadeIn();
+                }, 500)
+            } else {
+                if ($item = 'Skills') {
+                    if (currentpage == '.Projects') {
+                        console.log('ha32');
+                        animateIt('.Projects', '.Skills', 'AnimateDownOut', 'AnimateDownIn');
+                        $(document).scrollTop(0)
+                    }
+                }
             }
-        }
-        if($item=='Contact'){
-            $contact = $('.ContactMe');
-            setTimeout(function(){
-                $contact.fadeIn();
-            },500)
         }
     })
     $('.footerEMob').click(function(){
@@ -422,6 +427,7 @@ function scrollIt(type, c, l) {
             $('.scrolling>#e' + ((cn + 3) % l)).addClass('MedOpacity');
             $tmpin.removeClass('hidden');
             $tmpin.fadeIn('slow');
+
 
         });
     }

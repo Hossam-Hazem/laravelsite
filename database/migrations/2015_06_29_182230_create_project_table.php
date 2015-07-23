@@ -20,6 +20,7 @@ class CreateProjectTable extends Migration
             $table->string('date');
             $table->string('course');
             $table->integer('related');
+            $table->string('github');
             $table->timestamps();
 
         });

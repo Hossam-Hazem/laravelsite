@@ -7,6 +7,7 @@ $(document).ready(function () {
     //slider('.photosSlider0')
 });
 function slider(maindiv) {
+    $(maindiv + '>.ButtonDiv>.prevbt').attr('disabled','disabled')
     var counter = 0;
     var $current = $(maindiv + '>#p' + counter)
     $current.addClass('current');
@@ -76,7 +77,7 @@ function slider(maindiv) {
     /////////////////////////////////////////////////
     //previous button
     $(maindiv + '>.ButtonDiv>.prevbt').click(function () {
-        if (isanim)
+        if (isanim||$(this).attr('disabled')=='disabled')
             return;
         isanim = true;
         counter = prevpagecounter(counter);
@@ -111,7 +112,7 @@ function slider(maindiv) {
     })
     //////////////////////////////////////////////////////
     $(maindiv + '>.ButtonDiv>.nextbt').on('click', function () {
-        if (isanim)
+        if (isanim||$(this).attr('disabled')=='disabled')
             return;
         isanim = true;
         counter = nextpagecounter(counter);
@@ -177,7 +178,6 @@ function slider(maindiv) {
     function setButtons(counter, numberOfPages) {
         if (counter == 0) {
             $(maindiv + '>.ButtonDiv>.prevbt').attr('disabled', 'disabled');
-            $(maindiv + '>.ButtonDiv>.prevbt').attr('color', 'red');
         } else {
             $(maindiv + '>.ButtonDiv>.prevbt').removeAttr('disabled');
         }
