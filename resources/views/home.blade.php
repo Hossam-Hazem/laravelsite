@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>Hossam Hazem</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret One">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poiret One">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{asset('css/slider.css')}}"/>
-    <link rel="stylesheet" href="{{elixir('css/home.css')}}"/>
-    <script src="{{ asset('js/jquery-1.11.3.js') }}"></script>
-    <script src="{{ elixir('js/cmdwriter.js') }}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{secure_asset('css/slider.css')}}"/>
+    <link rel="stylesheet" href="{{secure_asset(elixir('css/home.css'))}}"/>
+    <script src="{{ secure_asset('js/jquery-1.11.3.js') }}"></script>
+    <script src="{{ secure_asset(elixir('js/cmdwriter.js')) }}"></script>
 </head>
 <body>
 <input type="hidden" id="token" value="{{ csrf_token() }}">
@@ -34,8 +34,8 @@
         <span class="enter"><span class="flashText">Website Loading</span></span>
     </div>
 </div>
-<script src="{{ asset('js/modernizr.custom.js') }}"></script>
-<script src="{{ asset('js/slider.js') }}"></script>
+<script src="{{ secure_asset('js/modernizr.custom.js') }}"></script>
+<script src="{{ secure_asset('js/slider.js') }}"></script>
 <div class="WelcomeHead page ">
     <div class="WelcomeLayer">
         <div class="WelcomeHeadHeader">
@@ -331,9 +331,9 @@
 
 </div>
 
-<script src="{{ elixir('js/home.js') }}"></script>
-<script src="{{ asset('js/scrollingDiv.js') }}"></script>
-<script src="{{ asset('js/starsSystem.js') }}"></script>
+<script src="{{ secure_asset(elixir('js/home.js')) }}"></script>
+<script src="{{ secure_asset('js/scrollingDiv.js') }}"></script>
+<script src="{{ secure_asset('js/starsSystem.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
