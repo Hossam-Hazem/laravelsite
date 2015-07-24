@@ -19,13 +19,17 @@
 <input type="hidden" id="token" value="{{ csrf_token() }}">
 
 <div class="page WelcomeDiv">
-    <div class ='consolewriter'>
-        <div class="consMsg other">123</div>
-        <div class="consMsg me">456789101112</div>
-        <div class="consMsg other">131///415161718</div>
-        <div class="consMsg me">19202122232425</div>
-        <div class="consMsg other">2627282930</div>
-        <div class="consMsg me">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi lectus, pharetra eget sem quis, viverra tincidunt neque. Morbi viverra, augue dictum commodo facilisis, turpis quam eleifend arcu, eget imperdiet enim purus eget mauris. Vivamus ac orci efficitur, tincidunt lacus sit amet, volutpat mauris. Cras viverra ligula lacus, id imperdiet elit malesuada ut. Curabitur fringilla, dolor eu tristique pharetra,</div>
+    <div class='consolewriter'>
+        <div class="consMsg other hidden">123</div>
+        <div class="consMsg me hidden">456789101112</div>
+        <div class="consMsg other hidden">131///415161718</div>
+        <div class="consMsg me hidden">19202122232425</div>
+        <div class="consMsg other hidden">2627282930</div>
+        <div class="consMsg me hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi lectus, pharetra eget
+            sem quis, viverra tincidunt neque. Morbi viverra, augue dictum commodo facilisis, turpis quam eleifend arcu,
+            eget imperdiet enim purus eget mauris. Vivamus ac orci efficitur, tincidunt lacus sit amet, volutpat mauris.
+            Cras viverra ligula lacus, id imperdiet elit malesuada ut. Curabitur fringilla, dolor eu tristique pharetra,
+        </div>
         <div class="writer"></div>
         <span class="enter"><span class="flashText">Website Loading</span></span>
     </div>
@@ -62,8 +66,8 @@
                     </span>
             </div>
             <div class="BodyArrowDownDiv" id="Welcome">
-                    <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
-                    <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
+                <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
+                <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
             </div>
         </div>
     </div>
@@ -138,47 +142,46 @@
                                                         </table>
                                         </div>
                                     @elseif($skillType->name=='Experience')
-                                        <div class="SkillsOut">@foreach($skillType->skills as $skill)
-                                                <div class="Skill">
-                                                    <div class="ExpH">{{$skill->skill}}</div>
-                                                    <div class="ExpImg"><img src="{{asset('images/'.$skill->path)}}"
-                                                                             alt="{{$skill->skill}}"
-                                                                             title="{{$skill->skill}}"
-                                                                             class="iconimage headimage"/></div>
-                                                    <div class="ExpDesc">{{$skill->Description}}</div>
-                                                </div>
+                                        <?php
+                                        $skills = $skillType->skills
+                                        ?>
+                                        <div class="SkillsOut">@foreach($skills as $c1=>$skill)
+                                                @if($c1+1==count($skills))
+                                                    <div class="SkillLast">
+                                                        @else
+                                                            <div class="Skill">
+                                                                @endif
+                                                                <div class="ExpH">{{$skill->skill}}</div>
+                                                                <div class="ExpImg"><img
+                                                                            src="{{asset('images/'.$skill->path)}}"
+                                                                            alt="{{$skill->skill}}"
+                                                                            title="{{$skill->skill}}"
+                                                                            class="iconimage headimage"/></div>
+                                                                <div class="ExpDesc">{{$skill->Description}}</div>
+                                                            </div>
 
-                                            @endforeach</div>
+                                                            @endforeach</div>
 
-                                    @else
-                                        <div class="SkillsOut">@foreach($skillType->skills as $skill)
-                                                <div class="Skll">{{$skill->skill}}</div>
-                                            @endforeach</div>
+                                                @else
+                                                    <div class="SkillsOut">@foreach($skillType->skills as $skill)
+                                                            <span class="otherSkill">{{$skill->skill}}</span>
+                                                            <div class="otherSkillDescription">{{$skill->Description}}</div>
+                                                        @endforeach</div>
 
-                                    @endif
+                                                @endif
 
+                                        </div>
+                                </div>
+                                @endforeach
+
+                            </div>
+                            <div class="BodyArrowDownDiv" id="Skills">
+                                <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
+                                <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1>
                                 </div>
                             </div>
-                            @endforeach
+                        @include('_footer')
 
-                    </div>
-                    <div class="BodyArrowDownDiv" id="Skills">
-                        <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
-                        <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
-                    </div>
-                <footer class="footer">
-                    <div class="footerInner">
-                        <div class="footerIcons">
-                            <span class="footerIcon"><a class ="fa fa-github" href="https://github.com/Hossam-Hazem"></a></span>
-                            <span class="footerIcon fa fa-mobile footerEMob" id="footerMobileIcon"></span>
-                            <span class="footerIcon fa fa-envelope-o footerEMob" id="footerEmailIcon"></span>
-                            <span class="footerIcon"><a class ="fa fa-linkedin-square" href="https://www.linkedin.com/in/hhazem"></a></span>
-                        </div>
-                        <div class="footerThing footerEmail myHidden">hossam.yehya@guc.edu.eg</div>
-                        <div class="footerThing footerMobile myHidden">01008761826</div>
-                        <div class="omdonya">صنع في مصر</div>
-                    </div>
-                </footer>
 
     </section>
 
@@ -200,24 +203,32 @@
                     @for($c=0;$c<count($myprojects);$c++)
                         <div class='slide myProjectSlide ' id='p{{$c}}'>
                             <div class="projectHead">{{$myprojects[$c]->name}}</div>
-                            <div class='photosSlider myProjectPhotosSlider{{$c}} sliderMain'>
-                                <?php
-                                $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $myprojects[$c]->name)
-                                ?>
-                                @for($cp=0;$cp<count($filesDestination);$cp++)
-                                    <div class='slide photo' id='p{{$cp}}'
-                                         style="background-image:url('{{URL::asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                            <?php
+                                try{
+                            $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $myprojects[$c]->name);
+                                }
+                                catch(Exception $e){
+                                    $filesDestination=[];
+                                }
+                            ?>
+                            @if(count($filesDestination)!=0)
+                                <div class='photosSlider myProjectPhotosSlider{{$c}} sliderMain'>
+
+                                    @for($cp=0;$cp<count($filesDestination);$cp++)
+                                        <div class='slide photo' id='p{{$cp}}'
+                                             style="background-image:url('{{URL::asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                        </div>
+                                    @endfor
+                                    <div class='sliderIcons'>
+                                        <ul class="sliderIconsL">
+                                        </ul>
                                     </div>
-                                @endfor
-                                <div class='sliderIcons'>
-                                    <ul class="sliderIconsL">
-                                    </ul>
+                                    <div class="ButtonDiv">
+                                        <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
+                                        <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
+                                    </div>
                                 </div>
-                                <div class="ButtonDiv">
-                                    <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
-                                    <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
-                                </div>
-                            </div>
+                            @endif
                             <div class="projectDescription">
                                 <div class="projectDate"><span class="projectLabel">Made in:</span> <span
                                             class="projectText">{{$myprojects[$c]->date}}</span></div>
@@ -285,10 +296,11 @@
                 </div>
             </div>
         </div>
-        <footer class="BodyArrowDownDiv" id="Projects">
+        <div class="BodyArrowDownDiv" id="Projects">
             <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
             <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
-        </footer>
+        </div>
+        @include('_footer')
     </section>
     <section class="ContactMe page">
         <div class="contactMeContainer">
@@ -305,7 +317,7 @@
                     {!!Form::textarea('message',null,['class'=>'form-control contactMessage','placeholder'=>"Want to contact me or have a feedback \n congrats, you are in the right place!"])!!}
                 </div>
                 <div class="form-group">
-                    {!!Form::submit('Send',['class' => 'btn btn-primary form-control sendButton','id'=>'submit'])!!}
+                    {!!Form::submit('Send',['class' => 'btn btn-primary form-control sendButton','disabled'=>'disabled','id'=>'submit'])!!}
                 </div>
                 {!! Form::close()!!}
             </div>
@@ -320,6 +332,8 @@
 </div>
 
 <script src="{{ elixir('js/home.js') }}"></script>
+<script src="{{ asset('js/scrollingDiv.js') }}"></script>
+<script src="{{ asset('js/starsSystem.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -161,6 +161,7 @@ body{
     color:black;
     background-color:rgba(255,255,255,0.1);
     margin: 50px auto 0;
+    border-radius: 10px;
 }
 .BodyArrowDownDiv#Welcome{
 
@@ -174,6 +175,7 @@ body{
     color:black;
     background-color:rgba(255,255,255,0.1);
     margin: 0 auto 5px;
+    border-radius: 10px;
 }
 .BodyArrowUpDiv:Hover{
     color:white;
@@ -398,6 +400,31 @@ table tr td{
     border-radius: 2%;
     border-width: thin;
     border-color:inherit;
+    padding-left:20px;
+    padding-top: 20px;
+}
+.SkillsTypeBody{
+    background-color: inherit;
+}
+.SkillsOut{
+    background-color: inherit;
+}
+.otherSkill{
+    background-color: inherit;
+    font-size: 20px;
+    margin-left: 20px;
+    font-family: 'Ubuntu';
+}
+.otherSkillDescription{
+    border-style: dotted;
+    border-width: thin;
+    margin-top: -13px;
+    padding-top: 20px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-size: 15px;
+    font-family: 'Ubuntu';
 }
 .Skill{
     padding-bottom: 20px;
@@ -406,6 +433,13 @@ table tr td{
     font-size:18px;
     font-family: 'Ubuntu';
     color:inherit;
+}
+.SkillLast{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+    font-family: 'Ubuntu';
+    color: inherit;
 }
 .SkillsTypeOut{
     color:#ECF0F1;
@@ -539,6 +573,9 @@ table tr td{
 }
 .contactMeInnerContainer{
     padding:0 50px;
+}
+.sendButton:disabled{
+    background-color:grey;
 }
 .footer{
     border-top: solid;

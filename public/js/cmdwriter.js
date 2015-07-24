@@ -1,6 +1,7 @@
 
 	$(document).ready(function(){
         introObject('.consolewriter');
+
     })
 
 function introObject(maindivC) {
@@ -8,6 +9,7 @@ function introObject(maindivC) {
 	var maindiv=maindivC;
 	var elements
 	var currentIndex
+    var Interval
 	console.log(maindiv)
 	intro()
 	function intro(){
@@ -40,7 +42,7 @@ function introObject(maindivC) {
 		else{
 			target=maindiv+'>.writer';
 		}
-		var interval= setInterval(function(){
+		interval= setInterval(function(){
 			if(Stringindex==text.length){
 				if(who=='other'){
 					$(maindiv+'>.writer').before('<span class="Msg other">')
@@ -70,5 +72,8 @@ function introObject(maindivC) {
 			Stringindex++;
 			}
 		},200)
-	}
+    }
+    $('body').on('killCmdWriter',function(){
+        clearInterval(interval)
+    })
 }
