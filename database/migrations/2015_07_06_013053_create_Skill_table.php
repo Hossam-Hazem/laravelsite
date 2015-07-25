@@ -18,7 +18,7 @@ class CreateSkillTable extends Migration
             $table->string('skill');
             $table->integer('rating')->nullable();
             $table->string('Description')->nullable();
-            $table->boolean('isIcon')->nullable();
+            $table->boolean('isIcon')->default(false);
             $table->string('path')->nullable();
             $table->timestamps();
         });

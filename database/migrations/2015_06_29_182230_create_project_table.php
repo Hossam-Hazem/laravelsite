@@ -16,7 +16,7 @@ class CreateProjectTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description');
-            $table->boolean('isSchool')->nullable();
+            $table->boolean('isSchool')->default(false);
             $table->string('date')->nullable();
             $table->string('course')->nullable();
             $table->integer('related')->nullable();

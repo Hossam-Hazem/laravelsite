@@ -40,10 +40,6 @@ class HomeController extends Controller
     {
 
         $input=Request::all();
-        //dd($input);
-        if(!array_key_exists('needRating',$input)){
-            $input['needRating']=false;
-        }
         SkillType::create($input);
         return redirect('newskilltype');
     }
