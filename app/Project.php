@@ -26,7 +26,7 @@ class Project extends Model
         return $this->hasMany('App\Comment');
     }
 
-    public function setisSchoolAttribute($input){
+    public function setIsSchoolAttribute($input){
         if($input==null){
             $input=false;
         }
