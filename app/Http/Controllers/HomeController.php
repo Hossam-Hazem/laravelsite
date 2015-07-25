@@ -38,8 +38,10 @@ class HomeController extends Controller
 
     public function storeSkillType()
     {
+
         $input=Request::all();
-        if($input['needRating']==null){
+        //dd($input);
+        if(!array_key_exists('needRating',$input)){
             $input['needRating']=false;
         }
         SkillType::create($input);
