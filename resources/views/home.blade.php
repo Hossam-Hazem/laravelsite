@@ -30,7 +30,7 @@
             programming concepts as treasure hunting. My goal is the ultimate knowledge in computer science specifically
             and in life generally
         </div>
-        <div class="consMsg other hidden">(Y)</div>
+        <div class="consMsg other hidden">(</div>
         <div class="writer"></div>
         <span class="enter"><span class="flashText">Website Loading</span></span>
     </div>
@@ -216,7 +216,7 @@
 
                                     @for($cp=0;$cp<count($filesDestination);$cp++)
                                         <div class='slide photo' id='p{{$cp}}'
-                                             style="background-image:url('{{URL::secure_asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                             style="background-image:url('{{URL::asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
                                         </div>
                                     @endfor
                                     <div class='sliderIcons'>
@@ -264,7 +264,7 @@
                             ?>
                             @for($cp=0;$cp<count($filesDestination);$cp++)
                                 <div class='slide photo' id='p{{$cp}}'
-                                     style="background-image:url('{{URL::secure_asset('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                     style="background-image:url('{{URL::asset('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
                                 </div>
                             @endfor
                             <div class='sliderIcons'>
