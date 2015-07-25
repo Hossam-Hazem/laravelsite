@@ -16,10 +16,10 @@ class CreateSkillTable extends Migration
             $table->increments('id');
             $table->integer('skill_type_id')->unsigned();
             $table->string('skill');
-            $table->integer('rating');
-            $table->string('Description');
-            $table->boolean('isIcon');
-            $table->string('path');
+            $table->integer('rating')->nullable();
+            $table->string('Description')->nullable();
+            $table->boolean('isIcon')->nullable();
+            $table->string('path')->nullable();
             $table->timestamps();
         });
         Schema::table('skills', function($table) {

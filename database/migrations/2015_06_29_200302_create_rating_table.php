@@ -16,7 +16,7 @@ class CreateRatingTable extends Migration
             $table->increments('id');
             $table->integer('rating');
             $table->string('element')->index();
-            $table->string('ip');
+            $table->string('ip')->nullable();
             $table->timestamps();
         });
     }

@@ -17,10 +17,10 @@ class CreateProjectTable extends Migration
             $table->string('name')->unique();
             $table->text('description');
             $table->boolean('isSchool');
-            $table->string('date');
-            $table->string('course');
-            $table->integer('related');
-            $table->string('github');
+            $table->string('date')->nullable();
+            $table->string('course')->nullable();
+            $table->integer('related')->nullable();
+            $table->string('github')->nullable();
             $table->timestamps();
 
         });
