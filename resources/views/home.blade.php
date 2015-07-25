@@ -30,6 +30,7 @@
             programming concepts as treasure hunting. My goal is the ultimate knowledge in computer science specifically
             and in life generally
         </div>
+        <div class="consMsg other hidden">(Y)</div>
         <div class="writer"></div>
         <span class="enter"><span class="flashText">Website Loading</span></span>
     </div>
@@ -40,7 +41,7 @@
     <div class="WelcomeLayer">
         <div class="WelcomeHeadHeader">
             <div class="WelcomeTag">Welcome</div>
-            <div class="WelcomeImagediv"><img src="{{asset('images/myimage.jpg')}}" class="WelcomeImage"/></div>
+            <div class="WelcomeImagediv"><img src="{{secure_asset('images/myimage.jpg')}}" class="WelcomeImage"/></div>
         </div>
         <div class="infoDiv">
             <h4 class="glyphicon glyphicon-circle-arrow-up glyphHover"></h4>
@@ -77,7 +78,7 @@
     <header class="Header">
         <nav class="HBNav">
             <div class="HBNavX">
-                <img class='HBNavXImage' src="{{asset('images/myimage.jpg')}}"/></img>
+                <img class='HBNavXImage' src="{{secure_asset('images/myimage.jpg')}}"/></img>
                 <div class="HBNavXH">H</div>
                 <div class="HBNavXName">
                     <span class="HBNavXNameFirst">ossam</span>
@@ -129,7 +130,7 @@
                                                                         <td><i class="icon {{$skill->path}}"
                                                                                title="{{$skill->skill}}"></i></td>
                                                                     @else
-                                                                        <td><img src="{{asset('images/'.$skill->path)}}"
+                                                                        <td><img src="{{secure_asset('images/'.$skill->path)}}"
                                                                                  alt="{{$skill->skill}}"
                                                                                  title="{{$skill->skill}}"
                                                                                  class="iconimage"/></td>
@@ -153,7 +154,7 @@
                                                                 @endif
                                                                 <div class="ExpH">{{$skill->skill}}</div>
                                                                 <div class="ExpImg"><img
-                                                                            src="{{asset('images/'.$skill->path)}}"
+                                                                            src="{{secure_asset('images/'.$skill->path)}}"
                                                                             alt="{{$skill->skill}}"
                                                                             title="{{$skill->skill}}"
                                                                             class="iconimage headimage"/></div>
