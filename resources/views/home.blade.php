@@ -20,15 +20,15 @@
 
 <div class="page WelcomeDiv">
     <div class='consolewriter'>
-        <div class="consMsg other hidden">123</div>
-        <div class="consMsg me hidden">456789101112</div>
-        <div class="consMsg other hidden">131///415161718</div>
-        <div class="consMsg me hidden">19202122232425</div>
-        <div class="consMsg other hidden">2627282930</div>
-        <div class="consMsg me hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi lectus, pharetra eget
-            sem quis, viverra tincidunt neque. Morbi viverra, augue dictum commodo facilisis, turpis quam eleifend arcu,
-            eget imperdiet enim purus eget mauris. Vivamus ac orci efficitur, tincidunt lacus sit amet, volutpat mauris.
-            Cras viverra ligula lacus, id imperdiet elit malesuada ut. Curabitur fringilla, dolor eu tristique pharetra,
+        <div class="consMsg me hidden">hey there</div>
+        <div class="consMsg me hidden">My name is Hossam Hazem</div>
+        <div class="consMsg other hidden">Obviously</div>
+        <div class="consMsg me hidden">i am 21 years old</div>
+        <div class="consMsg other hidden">Who cares</div>
+        <div class="consMsg me hidden">
+            I consider coding as puzzle solving and learning new programming languages as a new adventure and
+            programming concepts as treasure hunting. My goal is the ultimate knowledge in computer science specifically
+            and in life generally
         </div>
         <div class="writer"></div>
         <span class="enter"><span class="flashText">Website Loading</span></span>
@@ -180,7 +180,7 @@
                                 <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1>
                                 </div>
                             </div>
-                        @include('_footer')
+                            @include('_footer')
 
 
     </section>
@@ -204,19 +204,18 @@
                         <div class='slide myProjectSlide ' id='p{{$c}}'>
                             <div class="projectHead">{{$myprojects[$c]->name}}</div>
                             <?php
-                                try{
-                            $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $myprojects[$c]->name);
-                                }
-                                catch(Exception $e){
-                                    $filesDestination=[];
-                                }
+                            try {
+                                $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $myprojects[$c]->name);
+                            } catch (Exception $e) {
+                                $filesDestination = [];
+                            }
                             ?>
                             @if(count($filesDestination)!=0)
                                 <div class='photosSlider myProjectPhotosSlider{{$c}} sliderMain'>
 
                                     @for($cp=0;$cp<count($filesDestination);$cp++)
                                         <div class='slide photo' id='p{{$cp}}'
-                                             style="background-image:url('{{URL::asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                             style="background-image:url('{{URL::secure_asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
                                         </div>
                                     @endfor
                                     <div class='sliderIcons'>
@@ -264,7 +263,7 @@
                             ?>
                             @for($cp=0;$cp<count($filesDestination);$cp++)
                                 <div class='slide photo' id='p{{$cp}}'
-                                     style="background-image:url('{{URL::asset('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                     style="background-image:url('{{URL::secure_asset('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
                                 </div>
                             @endfor
                             <div class='sliderIcons'>
@@ -314,10 +313,12 @@
                     {!!Form::text('email',null,['class'=>'form-control contactEmail','placeholder'=>'Email:'])!!}
                 </div>
                 <div class="form-group">
-                    {!!Form::textarea('message',null,['class'=>'form-control contactMessage','placeholder'=>"Want to contact me or have a feedback \n congrats, you are in the right place!"])!!}
+                    {!!Form::textarea('message',null,['class'=>'form-control contactMessage','placeholder'=>"Want to
+                    contact me or have a feedback \n congrats, you are in the right place!"])!!}
                 </div>
                 <div class="form-group">
-                    {!!Form::submit('Send',['class' => 'btn btn-primary form-control sendButton','disabled'=>'disabled','id'=>'submit'])!!}
+                    {!!Form::submit('Send',['class' => 'btn btn-primary form-control
+                    sendButton','disabled'=>'disabled','id'=>'submit'])!!}
                 </div>
                 {!! Form::close()!!}
             </div>
