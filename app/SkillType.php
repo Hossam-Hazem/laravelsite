@@ -16,7 +16,7 @@ class SkillType extends Model
     {
         return $this->hasMany('App\Skill');
     }
-    public function setNeedRatingAttribute($input){
+    public function setNeedratingAttribute($input){
         if($input==null){
             $input=false;
         }
