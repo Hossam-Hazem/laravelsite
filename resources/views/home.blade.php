@@ -21,7 +21,7 @@
 <div class="page WelcomeDiv">
     <div class='consolewriter'>
         <div class="consMsg me hidden">hey there</div>
-        <div class="consMsg me hidden">My name is Hossam Hazem</div>
+        <div class="consMsg me hidden">My name is Hossam</div>
         <div class="consMsg other hidden">Obviously</div>
         <div class="consMsg me hidden">i am 21 years old</div>
         <div class="consMsg other hidden">Who cares</div>
@@ -30,7 +30,7 @@
             programming concepts as treasure hunting. My goal is the ultimate knowledge in computer science specifically
             and in life generally
         </div>
-        <div class="consMsg other hidden">(</div>
+        <div class="consMsg other hidden">(Y)</div>
         <div class="writer"></div>
         <span class="enter"><span class="flashText">Website Loading</span></span>
     </div>
@@ -292,7 +292,7 @@
                 </div>
                 <div class="ButtonDiv">
                     <button class="btn btn-default nextbt">Show next Project</button>
-                    <button class="btn btn-default prevbt">Show previous Project</button>
+                    <button class="btn btn-default prevbt">Show prev Project</button>
                 </div>
             </div>
         </div>

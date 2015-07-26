@@ -38,7 +38,7 @@
     width:16px;
 	height:16px;
 	overflow: hidden;
-    background: url('http://hossamhazem.local/images/icons.png') -7px -7px;
+    background: url('/images/icons.png') -7px -7px;
     cursor: pointer;
 
 
