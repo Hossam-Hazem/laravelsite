@@ -314,8 +314,8 @@
                     {!!Form::text('email',null,['class'=>'form-control contactEmail','placeholder'=>'Email:'])!!}
                 </div>
                 <div class="form-group">
-                    {!!Form::textarea('message',null,['class'=>'form-control contactMessage','placeholder'=>"Want to
-                    contact me or have a feedback \n congrats, you are in the right place!"])!!}
+                    {!!Form::textarea('message',null,['class'=>'form-control contactMessage','placeholder'=>"Want to".
+                    "contact me or have a feedback \n then you are in the right place!"])!!}
                 </div>
                 <div class="form-group">
                     {!!Form::submit('Send',['class' => 'btn btn-primary form-control
