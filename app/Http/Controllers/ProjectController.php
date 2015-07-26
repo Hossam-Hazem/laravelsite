@@ -44,14 +44,14 @@ class ProjectController extends Controller
     {
         $input = Request::all();
         $project= Project::create($input);
-        for($c=0;$c<count($_FILES);$c++){
+       /* for($c=0;$c<count($_FILES);$c++){
             $destinationPath='uploads/'.$project->name;
             $image= Input::file('photo'.$c);
             if($image!=null) {
                 $filename = $image->getClientOriginalName();
                 $image->move($destinationPath, $filename);
             }
-        }
+        }*/
         return redirect('createproject');
     }
 
