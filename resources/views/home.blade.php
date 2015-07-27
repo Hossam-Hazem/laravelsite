@@ -266,9 +266,9 @@
                                 try{
                                      $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name)
                                     }
-                                catch(exception $e){
-                                    $filesDestination=[];
-                                }
+                             catch (Exception $e) {
+                                $filesDestination = [];
+                            }
                             ?>
                             @for($cp=0;$cp<count($filesDestination);$cp++)
                                 <div class='slide photo' id='p{{$cp}}'
