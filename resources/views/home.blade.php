@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <?php
+        function myAssets($x){
+            return asset($x);
+        }
+    ?>
     <meta charset="UTF-8">
     <title>Hossam Hazem</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -10,10 +15,10 @@
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{secure_asset('css/slider.css')}}"/>
-    <link rel="stylesheet" href="{{secure_asset(elixir('css/home.css'))}}"/>
-    <script src="{{ secure_asset('js/jquery-1.11.3.js') }}"></script>
-    <script src="{{ secure_asset(elixir('js/cmdwriter.js')) }}"></script>
+    <link rel="stylesheet" href="{{myAssets('css/slider.css')}}"/>
+    <link rel="stylesheet" href="{{myAssets(elixir('css/home.css'))}}"/>
+    <script src="{{ myAssets('js/jquery-1.11.3.js') }}"></script>
+    <script src="{{ myAssets(elixir('js/cmdwriter.js')) }}"></script>
 </head>
 <body>
 <input type="hidden" id="token" value="{{ csrf_token() }}">
@@ -23,7 +28,7 @@
         <div class="consMsg me hidden">hey there</div>
         <div class="consMsg me hidden">My name is Hossam</div>
         <div class="consMsg other hidden">Obviously</div>
-        <div class="consMsg me hidden">i am 21 years old</div>
+        <div class="consMsg me hidden">I am 21 years old</div>
         <div class="consMsg other hidden">Who cares</div>
         <div class="consMsg me hidden">
             I consider coding as puzzle solving and learning new programming languages as a new adventure and
@@ -35,13 +40,13 @@
         <span class="enter"><span class="flashText">Website Loading</span></span>
     </div>
 </div>
-<script src="{{ secure_asset('js/modernizr.custom.js') }}"></script>
-<script src="{{ secure_asset('js/slider.js') }}"></script>
+<script src="{{ myAssets('js/modernizr.custom.js') }}"></script>
+<script src="{{ myAssets('js/slider.js') }}"></script>
 <div class="WelcomeHead page ">
     <div class="WelcomeLayer">
         <div class="WelcomeHeadHeader">
             <div class="WelcomeTag">Welcome</div>
-            <div class="WelcomeImagediv"><img src="{{secure_asset('images/myimage.jpg')}}" class="WelcomeImage"/></div>
+            <div class="WelcomeImagediv"><img src="{{myAssets('images/myimage.jpg')}}" class="WelcomeImage"/></div>
         </div>
         <div class="infoDiv">
             <h4 class="glyphicon glyphicon-circle-arrow-up glyphHover"></h4>
@@ -78,7 +83,7 @@
     <header class="Header">
         <nav class="HBNav">
             <div class="HBNavX">
-                <img class='HBNavXImage' src="{{secure_asset('images/myimage.jpg')}}"/></img>
+                <img class='HBNavXImage' src="{{myAssets('images/myimage.jpg')}}"/></img>
                 <div class="HBNavXH">H</div>
                 <div class="HBNavXName">
                     <span class="HBNavXNameFirst">ossam</span>
@@ -130,7 +135,7 @@
                                                                         <td><i class="icon {{$skill->path}}"
                                                                                title="{{$skill->skill}}"></i></td>
                                                                     @else
-                                                                        <td><img src="{{secure_asset('images/'.$skill->path)}}"
+                                                                        <td><img src="{{myAssets('images/'.$skill->path)}}"
                                                                                  alt="{{$skill->skill}}"
                                                                                  title="{{$skill->skill}}"
                                                                                  class="iconimage"/></td>
@@ -154,7 +159,7 @@
                                                                 @endif
                                                                 <div class="ExpH">{{$skill->skill}}</div>
                                                                 <div class="ExpImg"><img
-                                                                            src="{{secure_asset('images/'.$skill->path)}}"
+                                                                            src="{{myAssets('images/'.$skill->path)}}"
                                                                             alt="{{$skill->skill}}"
                                                                             title="{{$skill->skill}}"
                                                                             class="iconimage headimage"/></div>
@@ -314,7 +319,7 @@
                     {!!Form::text('email',null,['class'=>'form-control contactEmail','placeholder'=>'Email:'])!!}
                 </div>
                 <div class="form-group">
-                    {!!Form::textarea('message',null,['class'=>'form-control contactMessage','placeholder'=>"Want to".
+                    {!!Form::textarea('message',null,['class'=>'form-control contactMessage','placeholder'=>"Want to ".
                     "contact me or have a feedback \n then you are in the right place!"])!!}
                 </div>
                 <div class="form-group">
@@ -333,9 +338,9 @@
 
 </div>
 
-<script src="{{ secure_asset(elixir('js/home.js')) }}"></script>
-<script src="{{ secure_asset('js/scrollingDiv.js') }}"></script>
-<script src="{{ secure_asset('js/starsSystem.js') }}"></script>
+<script src="{{ myAssets(elixir('js/home.js')) }}"></script>
+<script src="{{ myAssets('js/scrollingDiv.js') }}"></script>
+<script src="{{ myAssets('js/starsSystem.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
