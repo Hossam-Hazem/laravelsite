@@ -35,7 +35,6 @@
       <sourceFolder url="file://$MODULE_DIR$/vendor/mockery/mockery/library" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/vendor/mockery/mockery/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/vendor/mockery/mockery/tests/Mockery/Test" isTestSource="true" packagePrefix="Mockery" />
-      <excludeFolder url="file://$MODULE_DIR$/public/uploads" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

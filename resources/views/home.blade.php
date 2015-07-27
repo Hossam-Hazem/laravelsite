@@ -263,7 +263,12 @@
                         <div class="projectHead">{{$schoolprojects[$c]->name}}</div>
                         <div class='photosSlider schoolProjectPhotosSlider{{$c}} sliderMain'>
                             <?php
-                            $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name)
+                                try{
+                                     $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name)
+                                    }
+                                catch(exception $e){
+                                    $filesDestination=[];
+                                }
                             ?>
                             @for($cp=0;$cp<count($filesDestination);$cp++)
                                 <div class='slide photo' id='p{{$cp}}'
