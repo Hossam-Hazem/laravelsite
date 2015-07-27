@@ -12,8 +12,8 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poiret One">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu">
-    <link rel="stylesheet"
-          href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
+
+        <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{myAssets('css/slider.css')}}"/>
     <link rel="stylesheet" href="{{myAssets(elixir('css/home.css'))}}"/>
@@ -60,8 +60,6 @@
                 <div class="centertext WelcomeText" id="e5">2017 Expected Graduate</div>
                 <div class="centertext WelcomeText" id="e6">Excellent Grade Student</div>
                 <div class="centertext WelcomeText" id="e7">Ex Intern at Raya</div>
-                <div class="centertext WelcomeText" id="e8">Hard Worker</div>
-                <div class="centertext WelcomeText" id="e9">Fast Learner</div>
             </div>
             <h4 class="glyphicon glyphicon-circle-arrow-down glyphHover"></h4>
         </div>
