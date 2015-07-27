@@ -264,7 +264,7 @@
                         <div class='photosSlider schoolProjectPhotosSlider{{$c}} sliderMain'>
                             <?php
                                 try{
-                                     $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name)
+                                     $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name);
                                 } catch (Exception $e) {
                                     $filesDestination = [];
                                 }
