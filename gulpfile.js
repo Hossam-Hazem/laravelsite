@@ -12,5 +12,5 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.version(['public/css/home.css','public/js/home.js','public/js/cmdwriter.js'])
+    mix.version(['public/css/home.css','public/js/home.js','public/js/cmdwriter.js','public/js/starsSystem.js','public/js/scrollingDiv.js','public/js/slider.js','public/css/slider.css'])
 });

@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
         <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{myAssets('css/slider.css')}}"/>
+    <link rel="stylesheet" href="{{myAssets(elixir('css/slider.css'))}}"/>
     <link rel="stylesheet" href="{{myAssets(elixir('css/home.css'))}}"/>
     <script src="{{ myAssets('js/jquery-1.11.3.js') }}"></script>
     <script src="{{ myAssets(elixir('js/cmdwriter.js')) }}"></script>
@@ -31,7 +31,7 @@
         <div class="consMsg me hidden">I am 21 years old</div>
         <div class="consMsg other hidden">Who cares</div>
         <div class="consMsg me hidden">
-            I consider coding as puzzle solving and learning new programming languages as a new adventure and
+            I Love//// am addicted to coding, I consider coding as puzzle solving and learning new programming languages as a new adventure and
             programming concepts as treasure hunting. My goal is the ultimate knowledge in computer science specifically
             and in life generally
         </div>
@@ -41,7 +41,7 @@
     </div>
 </div>
 <script src="{{ myAssets('js/modernizr.custom.js') }}"></script>
-<script src="{{ myAssets('js/slider.js') }}"></script>
+<script src="{{ myAssets(elixir('js/slider.js')) }}"></script>
 <div class="WelcomeHead page ">
     <div class="WelcomeLayer">
         <div class="WelcomeHeadHeader">
@@ -232,7 +232,11 @@
                                     </div>
                                 </div>
                             @endif
-                            <div class="projectDescription">
+                            @if(count($filesDestination)==0)
+                                <div class="projectDescriptionNoPhotos">
+                                    @else
+                                        <div class="projectDescription">
+                                            @endif
                                 <div class="projectDate"><span class="projectLabel">Made in:</span> <span
                                             class="projectText">{{$myprojects[$c]->date}}</span></div>
                                 <p> {{$myprojects[$c]->description}}</p>
@@ -348,8 +352,8 @@
 </div>
 
 <script src="{{ myAssets(elixir('js/home.js')) }}"></script>
-<script src="{{ myAssets('js/scrollingDiv.js') }}"></script>
-<script src="{{ myAssets('js/starsSystem.js') }}"></script>
+<script src="{{ myAssets(elixir('js/scrollingDiv.js')) }}"></script>
+<script src="{{ myAssets(elixir('js/starsSystem.js')) }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

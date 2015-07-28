@@ -1,5 +1,9 @@
 {
   "css/home.css": "css/home-703777a8.css",
   "js/home.js": "js/home-d0447766.js",
-  "js/cmdwriter.js": "js/cmdwriter-f40460d2.js"
+  "js/cmdwriter.js": "js/cmdwriter-f40460d2.js",
+  "js/starsSystem.js": "js/starsSystem-97891901.js",
+  "js/scrollingDiv.js": "js/scrollingDiv-ea2a2789.js",
+  "js/slider.js": "js/slider-bb6f01da.js",
+  "css/slider.css": "css/slider-376dcd91.css"
 }
