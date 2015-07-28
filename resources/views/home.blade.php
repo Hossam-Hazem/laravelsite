@@ -261,15 +261,16 @@
                 @for($c=0;$c<count($schoolprojects);$c++)
                     <div class='slide schoolProjectSlide' id='p{{$c}}'>
                         <div class="projectHead">{{$schoolprojects[$c]->name}}</div>
+                        <?php
+                        try{
+                            $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name);
+                        } catch (Exception $e) {
+                            $filesDestination = [];
+                        }
+                        ?>
                         @if(count($filesDestination)!=0)
                         <div class='photosSlider schoolProjectPhotosSlider{{$c}} sliderMain'>
-                            <?php
-                                try{
-                                     $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $schoolprojects[$c]->name);
-                                } catch (Exception $e) {
-                                    $filesDestination = [];
-                                }
-                            ?>
+
                             @for($cp=0;$cp<count($filesDestination);$cp++)
                                 <div class='slide photo' id='p{{$cp}}'
                                      style="background-image:url('{{URL::asset('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
