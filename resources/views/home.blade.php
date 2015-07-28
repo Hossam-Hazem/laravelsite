@@ -219,7 +219,7 @@
 
                                     @for($cp=0;$cp<count($filesDestination);$cp++)
                                         <div class='slide photo' id='p{{$cp}}'
-                                             style="background-image:url('{{URL::asset('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                             style="background-image:url('{{myAssets('uploads/'.$myprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
                                         </div>
                                     @endfor
                                     <div class='sliderIcons'>
@@ -277,7 +277,7 @@
 
                             @for($cp=0;$cp<count($filesDestination);$cp++)
                                 <div class='slide photo' id='p{{$cp}}'
-                                     style="background-image:url('{{URL::asset('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
+                                     style="background-image:url('{{myAssets('uploads/'.$schoolprojects[$c]->name.'/'.File::name($filesDestination[$cp]).'.'. File::extension($filesDestination[$cp])) }}')">
                                 </div>
                             @endfor
                             <div class='sliderIcons'>
