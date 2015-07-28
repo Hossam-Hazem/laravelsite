@@ -8,6 +8,19 @@
     ?>
     <meta charset="UTF-8">
     <title>Hossam Hazem</title>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-65720000-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+        
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poiret One">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
@@ -21,6 +34,7 @@
     <script src="{{ myAssets(elixir('js/cmdwriter.js')) }}"></script>
 </head>
 <body>
+
 <input type="hidden" id="token" value="{{ csrf_token() }}">
 
 <div class="page WelcomeDiv">

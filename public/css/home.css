@@ -1,7 +1,11 @@
+html{
+    height:100%;
+}
 body{
     overflow-x: hidden ;
     transform-style: preserve-3d;
     background-color: #2C3E50;
+    height:100%
 
 }
 .bodyAnimate{
