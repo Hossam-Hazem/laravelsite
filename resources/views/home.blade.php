@@ -286,7 +286,11 @@
                             </div>
                         </div>
                         @endif
+                        @if(count($filesDestination)==0)
+                            <div class="projectDescriptionNoPhotos">
+                                @else
                         <div class="projectDescription">
+                            @endif
                             <div class="projectDate"><span class="projectLabel">Made in:</span> <span
                                         class="projectText">{{$schoolprojects[$c]->date}}</span></div>
                             <div class="projectCourse"><span class="projectLabel">Course:</span> <span
