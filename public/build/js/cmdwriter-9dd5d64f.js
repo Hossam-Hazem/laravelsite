@@ -37,7 +37,7 @@ function introObject(maindivC) {
 		var Stringindex =0;
 		var target;
 		if(who=='me'){
-			target=maindiv+'>.msg';
+			target=maindiv+'>.Msg';
 		}
 		else{
 			target=maindiv+'>.writer';
@@ -64,7 +64,7 @@ function introObject(maindivC) {
 			}
 			else{if(text[Stringindex]=='/'){
 					var ctext = $(target).last().clone().children().remove().end().text();
-					$(target).last().html(ctext.substring(0,ctext.length-1)+cursor)	
+					$(target).last().html(ctext.substring(0,ctext.length-1)+cursor)
 			}
 			else{
 				$('.cursor').before(text[Stringindex]);
