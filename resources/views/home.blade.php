@@ -3,7 +3,7 @@
 <head>
     <?php
         function myAssets($x){
-            return asset($x);
+            return secure_asset($x);
         }
     ?>
     <meta charset="UTF-8">
