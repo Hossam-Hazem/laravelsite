@@ -495,6 +495,7 @@ table tr td{
     border-color: inherit;
     border-style: solid;
     border-width: thin;
+    height:650px;
 }
 .myProjectSlide{
     background-color: #ECF0F1;
@@ -504,8 +505,8 @@ table tr td{
 }
 .photosSlider{
     width: 75%;
+    height:60%;
     margin:0 auto;
-    height:300px;
 
 }
 .photoSliderButton{
@@ -528,11 +529,15 @@ table tr td{
     border-style: solid;
     border-color: inherit;
     border-width: thin;
+    height:25%;
+    overflow:auto;
+    width:85%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .photo{
     background-size: 100% 100%;
-    background: no-repeat center center;
 }
 .projectLabel{
     font-weight: bold;
