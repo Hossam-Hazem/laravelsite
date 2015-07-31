@@ -34,8 +34,6 @@ function slider(maindiv) {
         isanim = true;
         var iconid = $(this).attr('id');
         iconid = parseInt(iconid.substring(1));
-
-        console.log(iconid);
         var $next = $(maindiv + '>#p' + iconid);
         if (iconid == counter) {
             isanim = false;
@@ -82,10 +80,8 @@ function slider(maindiv) {
             return;
         isanim = true;
         counter = prevpagecounter(counter);
-        console.log(counter)
         $next = $(maindiv + '>#p' + counter);
         $current.addClass('Prev_SlideOut').on(animEndEventName, function () {
-            console.log('end c')
             $current.off(animEndEventName)
 
         })
@@ -94,7 +90,6 @@ function slider(maindiv) {
         $next.removeClass('HiddenImp');
         $next.addClass('Prev_SlideIn');
         $next.on(animEndEventName, function () {
-            console.log('end n');
             $(maindiv + '>.sliderIcons').trigger('iconpointer', [counter + 1, counter]);
             $current.removeClass('current');
             $current.addClass('HiddenImp');
@@ -117,10 +112,8 @@ function slider(maindiv) {
             return;
         isanim = true;
         counter = nextpagecounter(counter);
-        console.log(counter)
         $next = $(maindiv + '>#p' + counter);
         $current.addClass('Next_SlideOut').on(animEndEventName, function () {
-            console.log('end c')
             $current.off(animEndEventName)
 
         })
@@ -129,7 +122,6 @@ function slider(maindiv) {
         $next.removeClass('HiddenImp');
         $next.addClass('Next_SlideIn');
         $next.on(animEndEventName, function () {
-            console.log('end n');
             $(maindiv + '>.sliderIcons').trigger('iconpointer', [counter - 1, counter]);
             $current.removeClass('current');
             $current.addClass('HiddenImp');

@@ -27,7 +27,6 @@ $(document).ready(function () {
 
     //$('.infoDiv').height($(window).height() - $('.WelcomeHeadHeader').height() - 80);
     //noinspection JSJQueryEfficiency
-    console.log( $('.Header').height());
     $('.Skills').css('top', $('.Header').height());
     $('.Projects').css('top', $('.Header').height())
 
@@ -53,7 +52,6 @@ $(document).ready(function () {
 
     });
     $('.WelcomeDiv').on('click','.skipButton',function(){
-        console.log('ha3')
         animateIt('.WelcomeDiv','.WelcomeHead','AnimateUpOut','noAnim');
     })
     $('.contactMessage').on('input', function() {
@@ -94,13 +92,11 @@ $(document).ready(function () {
     })
     $('html').click(function () {
         if ($('.ContactMe').css('display') == 'block') {
-            console.log('ha3')
             $('.ContactMe').fadeOut();
         }
     });
 
     $('.contactMeContainer').click(function (event) {
-        console.log('event')
         event.stopPropagation();
     });
     $('.sendButton').click(function(event){
@@ -112,7 +108,6 @@ $(document).ready(function () {
             email: $('.contactEmail').val(),
             message: $('.contactMessage').val()
         }
-        console.log(ContactContent)
         $.ajax({
             type: 'POST',
             url: '/Contact',
@@ -126,17 +121,14 @@ $(document).ready(function () {
         })
     })
     $('.HBNavItem').click(function(){
-        console.log('ha31');
         $item=$(this).attr('id');
         if($item=='Projects'){
             if(currentpage=='.Skills' ||currentpage=='.HomeBody') {
-                console.log('ha32');
                 animateIt('.Skills', '.Projects','AnimateUpOut','AnimateUpIn');
                 $(document).scrollTop(0)
             }
         }else {
             if ($item == 'Contact') {
-                console.log('con')
                 $contact = $('.ContactMe');
                 setTimeout(function () {
                     $contact.fadeIn();
@@ -144,7 +136,6 @@ $(document).ready(function () {
             } else {
                 if ($item = 'Skills') {
                     if (currentpage == '.Projects') {
-                        console.log('ha32');
                         animateIt('.Projects', '.Skills', 'AnimateDownOut', 'AnimateDownIn');
                         $(document).scrollTop(0)
                     }
@@ -155,7 +146,6 @@ $(document).ready(function () {
     $('.footerEMob').click(function(){
         var id = $(this).attr('id');
         if($(this).hasClass('footerEmailIcon')){
-            console.log('foo')
             $('.footerMobile').slideUp('slow',function() {
                 $('.footerMobile').removeClass('footerSelected');
                 $('.footerMobileIcon').removeClass('footerSelected');
@@ -185,8 +175,6 @@ $(document).ready(function () {
     /////////////////the big boss//////////////////
 
     function animateIt(current, next,animOut,animIn) {
-        console.log(current)
-        console.log(next)
        // $(next+'>.BodyArrowDownDiv').addClass('hidden')
         $(document).scrollTop(0)
         setTimeout(function() {
@@ -303,17 +291,14 @@ function fireInTheCode(current,next){
     }
 }
 function FadeItIn(current,next){
-    console.log('0')
     if(current=='.WelcomeDiv'||current=='.WelcomeHead'){
         if(next=='.WelcomeHead'){
-            console.log('1')
             $('.WelcomeTag').addClass('myHidden');
             $('.WelcomeImagediv').addClass('myHidden');
             $('.infoDiv').addClass('myHidden');
             $('.quote').addClass('myHidden');
             $('.BodyArrowDownDiv#Welcome').addClass('myHidden');
             $('body').on(animEndEventName, function () {
-                console.log('2')
                 $('.WelcomeTag').fadeIn('slow',function(){
                     $('.WelcomeImagediv').fadeIn('slow',function(){
                         $('.infoDiv').fadeIn('slow',function(){

@@ -10,11 +10,9 @@ function introObject(maindivC) {
 	var elements
 	var currentIndex
     var Interval
-	console.log(maindiv)
 	intro()
 	function intro(){
 		elements=$(maindiv+'>.consMsg').remove()
-		console.log('ha31')
 		currentIndex=0;
 		engine();
 
@@ -33,7 +31,6 @@ function introObject(maindivC) {
 		}
 	}
 	function write(who,text){
-		console.log(text)
 		var Stringindex =0;
 		var target;
 		if(who=='me'){

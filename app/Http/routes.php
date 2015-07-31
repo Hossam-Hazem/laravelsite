@@ -16,9 +16,9 @@ Route::get('/createproject',['middleware'=>'manager','uses'=>'ProjectController@
 Route::post('/create','ProjectController@store');
 
 
-Route::get('/newskill','HomeController@createSkill');
+Route::get('/newskill',['middleware'=>'manager','HomeController@createSkill']);
 Route::post('/createskill','HomeController@storeSkill');
-Route::get('/newskilltype','HomeController@createSkillType');
+Route::get('/newskilltype',['middleware'=>'manager','HomeController@createSkillType']);
 Route::post('/createskilltype','HomeController@storeSkillType');
 
 Route::post('/newRating','HomeController@storeRating');

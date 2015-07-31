@@ -67,7 +67,6 @@ $(document).ready(function(){
         var elem = $(this).parent().parent().prev()[0]
         var skillValue = $($(elem).children()[0]).prop('title');
         var token = $('#token').val();
-        console.log(token);
         var $this = $(this);
         var ratingValue = {
             _token: token,
