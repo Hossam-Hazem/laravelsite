@@ -670,7 +670,7 @@ table tr td{
     -webkit-animation-name: AnimateDownIn;
     -webkit-animation-duration: 1s;
     -webkit-animation-fill-mode:both;
-    -webkit-animation-timig-function: ease;
+    -webkit-animation-timing-function: ease;
     animation: AnimateDownIn 1s both ease;
 }
 .cursor{

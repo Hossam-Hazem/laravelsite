@@ -85,19 +85,35 @@
 	
 }
 .Next_SlideOut{
-	-webkit-animation: -webkit-Next_SlideOut 1s both ease;
+	/*-webkit-animation: Next_SlideOut 1s both ease;*/
+    -webkit-animation-name: Next_SlideOut;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timing-function: ease;
 	animation: Next_SlideOut 1s both ease;
 }
 .Next_SlideIn{
-	-webkit-animation: -webkit-Next_SlideIn 1s both ease;
+	/*-webkit-animation: -webkit-Next_SlideIn 1s both ease;*/
+    -webkit-animation-name: Next_SlideIn;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timing-function: ease;
 	animation: Next_SlideIn 1s both ease;
 }
 .Prev_SlideOut{
-	-webkit-animation: -webkit-Prev_SlideOut 1s both ease;
+	/*-webkit-animation: -webkit-Prev_SlideOut 1s both ease;*/
+    -webkit-animation-name: Prev_SlideOut;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timing-function: ease;
 	animation: Prev_SlideOut 1s both ease;
 }
 .Prev_SlideIn{
-	-webkit-animation: -webkit-Prev_SlideIn 1s both ease;
+	/*-webkit-animation: -webkit-Prev_SlideIn 1s both ease;*/
+    -webkit-animation-name: Prev_SlideIn;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timing-function: ease;
 	animation: Prev_SlideIn 1s both ease;
 }
 @keyframes Next_SlideOut {
