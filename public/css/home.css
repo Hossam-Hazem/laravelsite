@@ -236,7 +236,7 @@ li{
 .HBNavMenu{
     width: 70%;
     padding-left: 20%;
-    display: flex;
+    display: -webkit-box;
     float: right;
 }
 .HBNavXImage{
@@ -642,67 +642,98 @@ table tr td{
 
 
 .AnimateUpOut{
-    -webkit-animation: -webkit-AnimateUpOut 1s both ease;
+   /* -webkit-animation: -webkit-AnimateUpOut 1s both ease;*/
+    -webkit-animation-name: AnimateUpOut;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timing-function: ease;
     animation: AnimateUpOut 1s both ease;
 }
 .AnimateUpIn{
-    -webkit-animation: -webkit-AnimateUpIn 1s both ease;
+    /*-webkit-animation: -webkit-AnimateUpIn 1s both ease;*/
+    -webkit-animation-name: AnimateUpIn;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timing-function: ease;
     animation: AnimateUpIn 1s both ease;
 }
+.AnimateDownOut{
+    /*-webkit-animation: -webkit-AnimateDownOut 1s both ease;*/
+    -webkit-animation-name: AnimateDownOut;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timing-function: ease;
+    animation: AnimateDownOut 1s both ease;
+}
+.AnimateDownIn{
+   /* -webkit-animation: -webkit-AnimateDownIn 1s both ease;*/
+    -webkit-animation-name: AnimateDownIn;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timig-function: ease;
+    animation: AnimateDownIn 1s both ease;
+}
 .cursor{
-    -webkit-animation: -webkit-cursor 1s both ease infinite;
+    /*-webkit-animation: -webkit-cursor 1s both ease infinite;*/
+    -webkit-animation-name: cursor;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
     animation: cursor 1s both ease infinite;
 }
 .flashText{
-    -webkit-animation: -webkit-cursor 4s both ease infinite;
+    /*-webkit-animation: -webkit-cursor 4s both ease infinite;*/
+    -webkit-animation-name: cursor;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-fill-mode:both;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
     animation: cursor 4s both ease infinite;
 }
 
 
 
 @-webkit-keyframes AnimateUpOut {
-    from{}
-    to{ -webkit-transform:  translateY(-100%);transform: translateY(-100%);  }
+    0%{}
+    100%{ -webkit-transform:  translateY(-100%);transform: translateY(-100%);  }
 }
 @keyframes AnimateUpOut {
-    from { }
-    to {transform:translateY(-100%);  }
+    0% { }
+    100% {transform:translateY(-100%);  }
 }
 @-webkit-keyframes AnimateUpIn {
-    from {  -webkit-transform:  translateY(100%); }
+    0% {  -webkit-transform:  translateY(100%); }
+    100%{}
 }
 @keyframes AnimateUpIn {
-    from { -webkit-transform: translateY(100%); transform: translateY(100%); }
+    0% { -webkit-transform: translateY(100%); transform: translateY(100%); }
+    100%{}
 }
 
 
-.AnimateDownOut{
-    -webkit-animation: -webkit-AnimateDownOut 1s both ease;
-    animation: AnimateDownOut 1s both ease;
-}
-.AnimateDownIn{
-    -webkit-animation: -webkit-AnimateDownIn 1s both ease;
-    animation: AnimateDownIn 1s both ease;
-}
+
 @-webkit-keyframes AnimateDownOut {
-    from{}
-    to{ -webkit-transform:  translateY(100%);transform: translateY(100%);  }
+    0%{}
+    100%{ -webkit-transform:  translateY(100%);transform: translateY(100%);  }
 }
 @keyframes AnimateDownOut {
-    from { }
-    to {transform:translateY(100%);  }
+    0% { }
+    100% {transform:translateY(100%);  }
 }
 @-webkit-keyframes AnimateDownIn {
-    from {  -webkit-transform:  translateY(-100%); }
+    0% {  -webkit-transform:  translateY(-100%); }
+    100% {}
 }
 @keyframes AnimateDownIn {
-    from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+    0% { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+    100% {}
 }
 
 @-webkit-keyframes cursor {
     0% { opacity:1;}
-    50%{opacity:0;}
-    100%{opacity:1;}
+    50% {opacity:0;}
+    100% {opacity:1;}
 
 }
 @keyframes cursor {

@@ -11,7 +11,7 @@ $(document).ready(function () {
     $(window).load(function(){
         $('.enter').html('Website Loaded');
         setTimeout(function(){
-            $('.enter').html('<a class="skipButton">Skip>></a>')
+            $('.enter').html('<a class="skipButton">Skip</a>')
         },5000);
     })
 
