@@ -1,4 +1,4 @@
-$(window).load(function(){
+$(window).ready(function(){
     scrollingDiv();
     var c = 0;
     var l = $('.scrolling').children().length;
@@ -6,6 +6,13 @@ $(window).load(function(){
         scrollIt('down', c, l)
         c = (c + 1) % l
     }, 3000)
+
+
+
+
+
+
+    ///////////Listeners///////////////
     $('body').on('killScrollingDiv',function(){
         clearInterval(scrollinginterval);
     })
@@ -42,7 +49,9 @@ function scrollingDiv() {
     $('.scrolling>#e1').addClass('MedOpacity');
     $('.scrolling>#e3').addClass('MedOpacity');
     $('.scrolling>#e4').addClass('LowOpacity');
-    $('.scrolling').css('min-height', $('.scrolling').css('height'))
+    setTimeout(function(){
+        $('.scrolling').css('min-height', $('.scrolling').css('height'))
+    },500)
 }
 function scrollIt(type, c, l) {
     if (type == 'down') {

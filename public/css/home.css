@@ -11,6 +11,9 @@ body{
 .bodyAnimate{
     overflow-y:hidden;
 }
+.Button{
+    cursor:pointer;
+}
 .WelcomeDiv{
     background-color: #ECF0F1;
     position: fixed !important;
@@ -123,6 +126,7 @@ body{
     text-align: center;
     margin-top:1%;
 }
+
 .scrolling{
     overflow:hidden;
 
@@ -496,6 +500,7 @@ table tr td{
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+    padding-top: 20px;
 }
 .sliderMain{
     border-color: inherit;
@@ -508,6 +513,15 @@ table tr td{
 }
 .schoolProjectSlide{
     background-color: #2C3E50;
+}
+.GitHub{
+    color:inherit;
+    font-size: 35px;
+    padding-left: 10px;
+
+}
+.GitHub:hover{
+    color:#E74C3C;
 }
 .photosSlider{
     width: 75%;

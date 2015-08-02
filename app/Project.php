@@ -14,7 +14,8 @@ class Project extends Model
         'hardness',
         'date',
         'course',
-        'related'
+        'related',
+        'github'
     ];
     public function photos()
     {

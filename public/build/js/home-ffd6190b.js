@@ -1,4 +1,4 @@
-
+////////////some modernizer thing//////////////////////////
 var animEndEventNames = {
         'WebkitAnimation': 'webkitAnimationEnd',
         'OAnimation': 'oAnimationEnd',
@@ -6,6 +6,9 @@ var animEndEventNames = {
         'animation': 'animationend'
     },
     animEndEventName = animEndEventNames[Modernizr.prefixed('animation')]
+///////////////////////////////////////////////
+
+//////////Intro/////////////////////
 $(document).ready(function () {
     //vars
     $(window).load(function(){
@@ -14,19 +17,10 @@ $(document).ready(function () {
             $('.enter').html('<a class="skipButton">Skip</a>')
         },5000);
     })
-
     var currentpage = '.WelcomeHead';
-    //some modernizer thing
+////////////////////////////////////////
 
-    ///////////
-   /* setTimeout(function () {
-        $('.WelcomeHead').width($(window).width());
-        $('.WelcomeHead').height($(window).height());
-    }, 50)*/
-    //  $('.WelcomeHead').width($(window).width());
 
-    //$('.infoDiv').height($(window).height() - $('.WelcomeHeadHeader').height() - 80);
-    //noinspection JSJQueryEfficiency
     $('.Skills').css('top', $('.Header').height());
     $('.Projects').css('top', $('.Header').height())
 
@@ -37,7 +31,7 @@ $(document).ready(function () {
         $('.HomeBody').addClass('hidden').css('height', '' + ($(window).height()));
         $('.Projects').css('height', '' + ($(window).height() - $('.Header').height())).addClass('hidden');
     },2000);
-    // $('.ContactMe').addClass('hidden1');
+
 
 
 

@@ -2,7 +2,7 @@ $(document).ready(function(){
     //Skills adjusting star rating
     var emptystar = "<span class='star glyphicon glyphicon-star-empty '></span>"
     var filledstar = "<span class='star filledstar glyphicon glyphicon-star '></span>"
-    var rateitstar = "<span class='star rateitstar glyphicon glyphicon-star-empty'></span>"
+    var rateitstar = "<span class='star Button rateitstar glyphicon glyphicon-star-empty'></span>"
 
     $('.Stars').val(function (index, value) {
         value = parseInt($(this).text());

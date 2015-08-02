@@ -3,13 +3,13 @@
 <head>
     <?php
         function myAssets($x){
-            return secure_asset($x);
+            return asset($x);
         }
     ?>
     <meta charset="UTF-8">
     <title>Hossam Hazem</title>
 
-        <script>
+        <!--<script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -18,7 +18,7 @@
             ga('create', 'UA-65720000-1', 'auto');
             ga('send', 'pageview');
 
-        </script>
+        </script>-->
 
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -63,7 +63,7 @@
             <div class="WelcomeImagediv"><img src="{{myAssets('images/myimage.jpg')}}" class="WelcomeImage"/></div>
         </div>
         <div class="infoDiv">
-            <h4 class="glyphicon glyphicon-circle-arrow-up glyphHover"></h4>
+            <h4 class="Button glyphicon glyphicon-circle-arrow-up glyphHover"></h4>
 
             <div class="scrolling">
                 <div class="centertext WelcomeText" id="e0">German University in Cairo Student</div>
@@ -75,7 +75,7 @@
                 <div class="centertext WelcomeText" id="e6">Excellent Grade Student</div>
                 <div class="centertext WelcomeText" id="e7">Ex Intern at Raya</div>
             </div>
-            <h4 class="glyphicon glyphicon-circle-arrow-down glyphHover"></h4>
+            <h4 class="Button glyphicon glyphicon-circle-arrow-down glyphHover"></h4>
         </div>
         <div class="floatDown">
             <div class="quote">
@@ -83,7 +83,7 @@
                         “If opportunity doesn't knock, build a door.”
                     </span>
             </div>
-            <div class="BodyArrowDownDiv" id="Welcome">
+            <div class=" Button BodyArrowDownDiv" id="Welcome">
                 <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
                 <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
             </div>
@@ -112,7 +112,7 @@
 
 
     <section class="Skills page">
-        <div class="BodyArrowUpDiv" id="Skills">
+        <div class="Button BodyArrowUpDiv" id="Skills">
             <div><h1 class="glyphicon glyphicon-menu-up BodyArrow glyphHover"></h1></div>
             <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-up glyphHover"></h1></div>
         </div>
@@ -193,7 +193,7 @@
                                 @endforeach
 
                             </div>
-                            <div class="BodyArrowDownDiv" id="Skills">
+                            <div class="Button BodyArrowDownDiv" id="Skills">
                                 <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
                                 <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1>
                                 </div>
@@ -204,7 +204,7 @@
     </section>
 
     <section class="Projects page ">
-        <div class="BodyArrowUpDiv" id="Projects">
+        <div class="Button BodyArrowUpDiv" id="Projects">
             <div><h1 class="glyphicon glyphicon-menu-up BodyArrow glyphHover"></h1></div>
             <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-up glyphHover"></h1></div>
         </div>
@@ -220,7 +220,13 @@
 
                     @for($c=0;$c<count($myprojects);$c++)
                         <div class='slide myProjectSlide ' id='p{{$c}}'>
-                            <div class="projectHead">{{$myprojects[$c]->name}}</div>
+                            <div class="projectHead">
+                                {{$myprojects[$c]->name}}
+                                @if($myprojects[$c]->github !=null)
+                                 <span class="Button GitHub devicons devicons-github_badge"><a
+                                             href="{{$myprojects[$c]->github}}"></a></span>
+                                @endif
+                            </div>
                             <?php
                             try {
                                 $filesDestination = File::allfiles($_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $myprojects[$c]->name);
@@ -241,8 +247,8 @@
                                         </ul>
                                     </div>
                                     <div class="ButtonDiv">
-                                        <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
-                                        <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
+                                        <span class="Button nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
+                                        <span class="Button prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
                                     </div>
                                 </div>
                             @endif
@@ -299,8 +305,8 @@
                                 </ul>
                             </div>
                             <div class="ButtonDiv">
-                                <span class="nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
-                                <span class="prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
+                                <span class="Button nextbt photoSliderButton glyphicon glyphicon-menu-right "></span>
+                                <span class="Button prevbt photoSliderButton glyphicon glyphicon-menu-left"></span>
                             </div>
                         </div>
                         @endif
@@ -328,7 +334,7 @@
                 </div>
             </div>
         </div>
-        <div class="BodyArrowDownDiv" id="Projects">
+        <div class="Button BodyArrowDownDiv" id="Projects">
             <div><h1 class="glyphicon glyphicon-menu-down BodyArrow glyphHover"></h1></div>
             <div><h1 class="BodyArrow BodyArrow2 glyphicon glyphicon-menu-down glyphHover"></h1></div>
         </div>
