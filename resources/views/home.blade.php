@@ -223,8 +223,7 @@
                             <div class="projectHead">
                                 {{$myprojects[$c]->name}}
                                 @if($myprojects[$c]->github !=null)
-                                 <span class="Button GitHub devicons devicons-github_badge"><a
-                                             href="{{$myprojects[$c]->github}}"></a></span>
+                                 <a class ="fa fa-github" href="{{$myprojects[$c]->github}}"></a>
                                 @endif
                             </div>
                             <?php
