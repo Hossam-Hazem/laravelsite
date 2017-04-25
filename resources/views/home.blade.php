@@ -66,13 +66,15 @@
             <h4 class="Button glyphicon glyphicon-circle-arrow-up glyphHover"></h4>
 
             <div class="scrolling">
-                <div class="centertext WelcomeText" id="e0">German University in Cairo Student</div>
+                <div class="centertext WelcomeText" id="e0">German University in Cairo Senior student</div>
                 <div class="centertext WelcomeText" id="e1">Computer Science and Engineering Victim</div>
                 <div class="centertext WelcomeText" id="e2">Software Developer</div>
                 <div class="centertext WelcomeText" id="e3">Web Wizard</div>
-                <div class="centertext WelcomeText" id="e4">6th Semester Survivor</div>
+                <div class="centertext WelcomeText" id="e4">10th Semester Survivor</div>
                 <div class="centertext WelcomeText" id="e5">2017 Expected Graduate</div>
                 <div class="centertext WelcomeText" id="e6">Excellent Grade Student</div>
+                <div class="centertext WelcomeText" id="e7">Internationally Proven Intern at Claymotions in India</div>
+                <div class="centertext WelcomeText" id="e7">Ex Intern at 311 Solutions</div>
                 <div class="centertext WelcomeText" id="e7">Ex Intern at Raya</div>
             </div>
             <h4 class="Button glyphicon glyphicon-circle-arrow-down glyphHover"></h4>
@@ -80,7 +82,7 @@
         <div class="floatDown">
             <div class="quote">
                     <span class="quoteText">
-                        “If opportunity doesn't knock, build a door.”
+                        “To be successful, the first thing to do is fall in love with your work.”
                     </span>
             </div>
             <div class=" Button BodyArrowDownDiv" id="Welcome">
