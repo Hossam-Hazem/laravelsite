@@ -74,8 +74,8 @@
                 <div class="centertext WelcomeText" id="e5">2017 Expected Graduate</div>
                 <div class="centertext WelcomeText" id="e6">Excellent Grade Student</div>
                 <div class="centertext WelcomeText" id="e7">Internationally Proven Intern at Claymotions in India</div>
-                <div class="centertext WelcomeText" id="e7">Ex Intern at 311 Solutions</div>
-                <div class="centertext WelcomeText" id="e7">Ex Intern at Raya</div>
+                <div class="centertext WelcomeText" id="e8">Ex Intern at 311 Solutions</div>
+                <div class="centertext WelcomeText" id="e9">Ex Intern at Raya</div>
             </div>
             <h4 class="Button glyphicon glyphicon-circle-arrow-down glyphHover"></h4>
         </div>
