@@ -3,7 +3,7 @@
 <head>
     <?php
         function myAssets($x){
-            return secure_asset($x);
+            return asset($x);
         }
     ?>
     <meta charset="UTF-8">
@@ -82,7 +82,7 @@
         <div class="floatDown">
             <div class="quote">
                     <span class="quoteText">
-                        “To be successful, the first thing to do is fall in love with your work.”
+
                     </span>
             </div>
             <div class=" Button BodyArrowDownDiv" id="Welcome">
