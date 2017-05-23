@@ -132,8 +132,21 @@ body{
 
 }
 .centertext{
-    text-align:center
+    text-align:center;
+    position:relative;
+    display:block;
 }
+
+.scrollingDivOut{
+    top: -1em;
+    height: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
 .WelcomeText{
     font-size:17px;
     color:white;

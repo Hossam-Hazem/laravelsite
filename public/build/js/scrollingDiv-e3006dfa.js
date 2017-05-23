@@ -58,7 +58,13 @@ function scrollIt(type, c, l) {
         var $tmpout = $('.scrolling>#e' + c);
         cn = (c + 1) % l;
         var $tmpin = $('.scrolling>#e' + ((cn + 4) % l))
-        $tmpout.slideUp('slow', function () {
+        $tmpout.animate({
+            top: '-=20',
+            height: 0,
+            opacity: 0
+        },'slow', function () {
+            $tmpout.removeAttr( 'style' );
+            $tmpout.css( 'display',"none" );
             $tmpout.addClass('hidden')
             $('.scrolling>#e' + c).removeClass('LowOpacity');
             $('.scrolling>#e' + (c + 4) % l).removeClass('LowOpacity');
