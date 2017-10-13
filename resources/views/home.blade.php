@@ -162,7 +162,7 @@
                                         </div>
                                     @elseif($skillType->name=='Experience')
                                         <?php
-                                        $skills = $skillType->skills
+                                        $skills = $skillType->skills()->orderBy('created_at','desc')->get()
                                         ?>
                                         <div class="SkillsOut">@foreach($skills as $c1=>$skill)
                                                 @if($c1+1==count($skills))
