@@ -171,11 +171,13 @@
                                                             <div class="Skill">
                                                                 @endif
                                                                 <div class="ExpH">{{$skill->skill}}</div>
+                                                                @if($skill->path != null)
                                                                 <div class="ExpImg"><img
                                                                             src="{{myAssets('images/'.$skill->path)}}"
                                                                             alt="{{$skill->skill}}"
                                                                             title="{{$skill->skill}}"
                                                                             class="iconimage headimage"/></div>
+                                                                @endif
                                                                 <div class="ExpDesc">{{$skill->Description}}</div>
                                                             </div>
 
