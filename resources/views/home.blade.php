@@ -42,7 +42,7 @@
         <div class="consMsg me hidden">hey there</div>
         <div class="consMsg me hidden">My name is Hossam</div>
         <div class="consMsg other hidden">Obviously</div>
-        <div class="consMsg me hidden">I am 21 years old</div>
+        <div class="consMsg me hidden">I am 23 years old</div>
         <div class="consMsg other hidden">Who cares</div>
         <div class="consMsg me hidden">
             I Love//// am addicted to coding, I consider coding as puzzle solving and learning new programming languages as a new adventure and
@@ -67,12 +67,11 @@
 
             <div class="scrolling">
                 <div class="centertext WelcomeText" id="e0">German University in Cairo Senior student</div>
-                <div class="centertext WelcomeText" id="e1">Computer Science and Engineering Victim</div>
+                <div class="centertext WelcomeText" id="e1">Computer Science and Engineering Survivor</div>
                 <div class="centertext WelcomeText" id="e2">Software Developer</div>
-                <div class="centertext WelcomeText" id="e3">Web Wizard</div>
-                <div class="centertext WelcomeText" id="e4">10th Semester Survivor</div>
-                <div class="centertext WelcomeText" id="e5">2017 Expected Graduate</div>
-                <div class="centertext WelcomeText" id="e6">Excellent Grade Student</div>
+                <div class="centertext WelcomeText" id="e3">Web Mechanic</div>
+                <div class="centertext WelcomeText" id="e5">2017 Excellent Grade Graduate with Honours</div>
+                <div class="centertext WelcomeText" id="e6">Post-Graduate Intern at Sumerge</div>
                 <div class="centertext WelcomeText" id="e7">Internationally Proven Intern at Claymotions in India</div>
                 <div class="centertext WelcomeText" id="e8">Ex Intern at 311 Solutions</div>
                 <div class="centertext WelcomeText" id="e9">Ex Intern at Raya</div>
