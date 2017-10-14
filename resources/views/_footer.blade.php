@@ -5,6 +5,7 @@
             <span class="footerIcon footerMobileIcon fa fa-mobile footerEMob" ></span>
             <span class="footerIcon footerEmailIcon fa fa-envelope-o footerEMob" ></span>
             <span class="footerIcon"><a class="fa fa-linkedin-square" href="https://www.linkedin.com/in/hhazem"></a></span>
+            <span class="footerIcon"><a class="fa fa-id-card-o" href="Resume.pdf"></a></span>
         </div>
 
         <div class="footerThing footerEmail myHidden">hossam.yehya@guc.edu.eg</div>

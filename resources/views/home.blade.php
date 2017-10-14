@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu">
         <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/89f2f44ba07ea3fff7e561c2142813b278c2d6c6/devicon.min.css">
         <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{myAssets(elixir('css/slider.css'))}}"/>
     <link rel="stylesheet" href="{{myAssets(elixir('css/home.css'))}}"/>
     <script src="{{ myAssets('js/jquery-1.11.3.js') }}"></script>
