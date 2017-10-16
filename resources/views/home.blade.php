@@ -154,7 +154,12 @@
                                                                                  class="iconimage"/></td>
                                                                     @endif
                                                                     <td>
-                                                                        <div class="Stars vert-align">{{$skill->rating}}</div>
+                                                                        @if($skill->rating == -1)
+                                                                            <div class="Stars vert-align">{{$skill->rating}}</div>
+                                                                        @elseif($skill->rating >= 3)
+                                                                            <div class="h4 vert-align">Working Knowledge</div>
+                                                                        @else
+                                                                            <div class="h4 vert-align">Basic Knowledge</div>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
