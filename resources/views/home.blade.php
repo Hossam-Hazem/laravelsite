@@ -160,6 +160,7 @@
                                                                             <div class="h4 vert-align">Working Knowledge</div>
                                                                         @else
                                                                             <div class="h4 vert-align">Basic Knowledge</div>
+                                                                        @endif
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
